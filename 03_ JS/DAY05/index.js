@@ -21,6 +21,7 @@
 
 // const str = `Hello Coder Army Coder`;
 
+
 // console.log(str.indexOf('Cod'));
 // console.log(str.lastIndexOf('Cod'));
 // console.log(str.includes('cod'));
