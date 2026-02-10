@@ -80,9 +80,9 @@ function pickupOrder(orderDetail, callback) {
 }
 
 
-// -------------------------------
-// STEP 4: DELIVER ORDER
-// -------------------------------
+// ------------------------------
+// STEP 4: DELIVER ORDER 
+// ------------------------------
 // • Final step
 // • Marks delivery complete
 
