@@ -4,6 +4,9 @@
 // number, string, boolean, undefined, null, bigint, symbol
 
 // 1) number
+//Purpose: Represents both integer and floating-point numbers.
+// Syntax: A numeric literal. There is no distinction between int and float.
+// Special Values: Includes Infinity, -Infinity, and NaN (Not a Number).
 let a = 10;
 let b = 2.36;
 console.log(a, b);
