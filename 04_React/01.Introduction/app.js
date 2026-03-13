@@ -1,3 +1,4 @@
+
 //________________________________________________________________________
 // UNDERSTANDING HOW REACT WORKS UNDER THE HOOD
 // This file shows the journey from vanilla JS → custom React → real React
