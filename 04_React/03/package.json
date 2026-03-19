@@ -1,20 +1,14 @@
 {
-  "name": "wev_devlopment",
+  "name": "03",
   "version": "1.0.0",
-  "description": "\"My first react app\"",
-  "homepage": "https://github.com/nikhilrautan/Web-Dev#readme",
-  "bugs": {
-    "url": "https://github.com/nikhilrautan/Web-Dev/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nikhilrautan/Web-Dev.git"
-  },
+  "description": "\"My first React app\"",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "dev":"vite",
+    "build":"vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
