@@ -12,7 +12,7 @@ function App(){
   return (
     <>
     <p>Counter: {count}</p>
-    <button onClick={increaseNumber}>Increment</button>
+    <button onClick={increaseNumber}>Increment: {count}</button>
     </>
   )
 
