@@ -3,13 +3,13 @@
 let x = 20;
 let y = 10;
 
-
 console.log(x > y);
 console.log(x >= y);
 console.log(x < y);
 console.log(x <= y);
 console.log(x == y);   // loose equality
 console.log(x === y);  // strict equality (type + value)
+
 
 // String -> Number
 let z = "120";
