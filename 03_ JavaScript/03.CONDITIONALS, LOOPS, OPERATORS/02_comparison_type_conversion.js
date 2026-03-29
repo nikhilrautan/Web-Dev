@@ -23,6 +23,7 @@ let b = Number(a);
 console.log(b);
 console.log(typeof b); // number
 
+
 // Boolean -> Number
 console.log(Number(true));  // 1
 console.log(Number(false)); // 0
