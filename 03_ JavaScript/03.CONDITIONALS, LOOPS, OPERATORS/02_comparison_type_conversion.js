@@ -11,6 +11,7 @@ console.log(x == y);   // loose equality
 console.log(x === y);  // strict equality (type + value)
 
 
+
 // String -> Number
 let z = "120";
 let num = Number(z);
