@@ -18,6 +18,7 @@ console.log(num);
 console.log(typeof num);
 
 
+
 // NaN example
 let a = "121ac";
 let b = Number(a);
