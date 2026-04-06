@@ -15,6 +15,7 @@ console.log(null == "");      // false
 console.log(null == false);   // false
 console.log(null == true);    // false
 
+
 // Comparisons with > < >= <=
 // null converts to 0, undefined converts to NaN
 console.log(null >= 0);       // true
