@@ -1,7 +1,7 @@
 // Strings basics
-
 const str1 = "Nikhil Rautan";
 const str2 = "Nikhil Rautan";
+
 
 const day = 18;
 const str3 = `I am coming on ${day}`;
