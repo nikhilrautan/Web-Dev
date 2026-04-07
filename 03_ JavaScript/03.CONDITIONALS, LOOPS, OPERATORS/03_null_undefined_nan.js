@@ -33,6 +33,7 @@ console.log("Rohit" > "Rahit");
 // number vs boolean comparison
 console.log(10 < true); // true -> 1 so 10 < 1 => false (actually false)
 
+
 // NaN is never equal to NaN
 console.log(NaN == NaN);      // false
 console.log(NaN === NaN);     // false
