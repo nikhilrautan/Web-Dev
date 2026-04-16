@@ -11,6 +11,7 @@ console.log(true || false);
 console.log(false || false);
 console.log(false || true);
 
+
 // && behaviour
 let p = "Rohit";
 let q = "";
