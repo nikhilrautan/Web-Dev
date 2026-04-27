@@ -9,6 +9,8 @@ function App(){
   const para = document.querySelector('p');
     para.textContent = `Counter:${count}`;
   }
+   const button = document.querySelector('button');
+    button.textContent = `Increment:${count}`;
   return (
     <>
     <p>Counter: {count}</p>
