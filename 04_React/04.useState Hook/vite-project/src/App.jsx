@@ -6,7 +6,7 @@ function App(){
   function increaseNumber(){
     count++;
     //console.log(count);
-    const para = document.querySelector('p');
+  const para = document.querySelector('p');
     para.textContent = `Counter:${count}`;
   }
   return (
