@@ -12,4 +12,5 @@ parent.append(para,button);
 button.addEventListener('click',()=>{
  count++;
  para.textContent =`Counter: ${count}`;
+ console.log(count);
 })
