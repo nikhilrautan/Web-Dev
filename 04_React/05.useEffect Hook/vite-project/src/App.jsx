@@ -12,8 +12,9 @@ function App(){
     setUsers(data);
    }
 
-   GithubProfile();
    
+   GithubProfile();
+
   return (
     <>
     <h1>Github User</h1>
