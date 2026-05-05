@@ -24,7 +24,6 @@ function Clock(){
 
     
     
-    
     return (
         <>
         <button onClick={()=>setShow(!show)}>{show?"hide":"show"}</button>
