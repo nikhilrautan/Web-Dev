@@ -12,9 +12,10 @@ function App(){
     setUsers(data);
    }
 
-   
+
    GithubProfile();
 
+   
   return (
     <>
     <h1>Github User</h1>
