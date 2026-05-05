@@ -14,7 +14,6 @@ function App(){
 
    GithubProfile();
 
-
   return (
     <>
     <h1>Github User</h1>
