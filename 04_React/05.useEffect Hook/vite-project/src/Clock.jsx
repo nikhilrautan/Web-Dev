@@ -15,7 +15,7 @@ function Clock(){
       setTime(new Date().toLocaleTimeString());
       console.log("Hi");
     },1000)
-    
+
     return ()=>{
         clearInterval(intervalId);
     }
