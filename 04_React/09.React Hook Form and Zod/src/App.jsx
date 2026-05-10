@@ -6,6 +6,8 @@ import './App.css'
 
 function App() {
   
+  const [name,setName] =useState('');
+  
 }
 
 
