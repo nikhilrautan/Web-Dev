@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import {email, z} from 'zod'
 
+
 const formSchema = z.object({
     name: z.string().min(3,"Minimum length should be 3").max(20,"Maximum length should be 20"),
     age: z.coerce.number().min(10,"Minimum Age should be 10").max(80,"Maximum Age should be 80"),
