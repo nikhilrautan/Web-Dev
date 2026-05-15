@@ -15,6 +15,7 @@ function increment() {
 }
 
 function decrement() {
+    
     count--;
     render();
 }
