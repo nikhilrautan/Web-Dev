@@ -1,5 +1,4 @@
 let count = 0;
-
 function render() {
     document.getElementById('root').innerHTML = `
         <p>This is the counter for react App</p>
@@ -15,7 +14,7 @@ function increment() {
 }
 
 function decrement() {
-    
+
     count--;
     render();
 }
