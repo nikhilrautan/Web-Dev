@@ -18,4 +18,5 @@ function decrement() {
     count--;
     render();
 }
+
 render();
