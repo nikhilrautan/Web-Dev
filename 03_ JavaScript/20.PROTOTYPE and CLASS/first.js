@@ -23,7 +23,6 @@
 // //     account:30
 // // }
 
-
 // // obj2.__proto__ = obj;
 
 // // console.log(obj.hasOwnProperty("name"))
