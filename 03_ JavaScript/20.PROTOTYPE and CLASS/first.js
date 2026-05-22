@@ -27,7 +27,6 @@
 
 // // console.log(obj.hasOwnProperty("name"))
 
-
 // // const obj1 = {
 // //     name:"Rohit",
 // //     age:30,
