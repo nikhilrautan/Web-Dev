@@ -20,7 +20,6 @@
 // // // console.log(arr.length)
 
 
-
 // // const obj2 = {
 // //     account:30
 // // }
