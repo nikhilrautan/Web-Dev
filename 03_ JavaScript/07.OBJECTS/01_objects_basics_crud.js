@@ -24,6 +24,7 @@ console.log(user["name"]);
 // Using dot notation
 console.log(user.age);
 
+
 // Bracket notation also works for normal keys
 console.log(user["age"]);
 
