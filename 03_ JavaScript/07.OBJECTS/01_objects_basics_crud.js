@@ -22,6 +22,7 @@ const user = {
 // Using bracket notation
 console.log(user["name"]);
 
+
 // Using dot notation
 console.log(user.age);
 
