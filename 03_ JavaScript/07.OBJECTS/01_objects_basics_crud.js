@@ -29,7 +29,6 @@ console.log(user.age);
 console.log(user["age"]);
 
 
-
 // Required when key contains spaces
 console.log(user["home address"]);
 
