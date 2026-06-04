@@ -32,6 +32,7 @@ console.log(user["age"]);
 // Required when key contains spaces
 console.log(user["home address"]);
 
+
 // typeof object returns "object"
 console.log(typeof user);
 
