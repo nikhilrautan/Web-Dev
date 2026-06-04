@@ -43,6 +43,7 @@ user.aadhar = 1234;
 // Update an existing property
 user.amount = 5000;
 
+
 // Display updated object
 console.log(user);
 
