@@ -28,7 +28,6 @@ console.log(user.age);
 // Bracket notation also works for normal keys
 console.log(user["age"]);
 
-
 // Required when key contains spaces
 console.log(user["home address"]);
 
