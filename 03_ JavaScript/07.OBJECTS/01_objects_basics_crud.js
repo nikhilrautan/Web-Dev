@@ -18,6 +18,7 @@ const user = {
 
 // Reading/Accessing object properties
 
+
 // Using bracket notation
 console.log(user["name"]);
 
