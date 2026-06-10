@@ -2,6 +2,7 @@
 Object methods and loops
 */
 
+
 const user = {
   name: "Nikhil",
   age: 20,
