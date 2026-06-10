@@ -27,6 +27,7 @@ for (let key of tempKeys) {
   console.log(key);
 }
 
+
 // Loop values
 for (let value of Object.values(user)) {
   console.log(value);
