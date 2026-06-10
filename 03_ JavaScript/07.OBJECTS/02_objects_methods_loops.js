@@ -32,6 +32,7 @@ for (let value of Object.values(user)) {
   console.log(value);
 }
 
+
 // Loop entries
 for (let [key, value] of Object.entries(user)) {
   console.log(key, value);
