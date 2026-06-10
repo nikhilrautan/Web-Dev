@@ -21,6 +21,7 @@ for (let key in user) {
   console.log(key, user[key]);
 }
 
+
 // Loop using keys array
 const tempKeys = Object.keys(user);
 for (let key of tempKeys) {
