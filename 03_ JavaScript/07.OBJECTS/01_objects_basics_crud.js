@@ -44,6 +44,7 @@ user.aadhar = 1234;
 user.amount = 5000;
 
 
+
 // Display updated object
 console.log(user);
 
