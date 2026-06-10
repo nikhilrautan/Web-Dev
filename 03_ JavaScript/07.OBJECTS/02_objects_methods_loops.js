@@ -11,6 +11,7 @@ const user = {
   "home address": "Chaukhutia"
 };
 
+
 // Object methods
 console.log(Object.keys(user));
 console.log(Object.values(user));
