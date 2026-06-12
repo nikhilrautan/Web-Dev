@@ -1,7 +1,6 @@
 // Arrays basics
 
 let marks = [100, 50, 70, 80, 90];
-
 console.log(marks);
 console.log(marks.length);
 
