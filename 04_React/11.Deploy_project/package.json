@@ -2,6 +2,9 @@
   "name": "react_project",
   "version": "1.0.0",
   "description": "",
+  "author": "Nikhil",
+  "license": "ISC",
+  "type": "commonjs",
   "homepage": "https://github.com/nikhilrautan/Web-Development#readme",
   "bugs": {
     "url": "https://github.com/nikhilrautan/Web-Development/issues"
@@ -10,16 +13,16 @@
     "type": "git",
     "url": "git+https://github.com/nikhilrautan/Web-Development.git"
   },
-  "license": "ISC",
-  "author": "Nikhil",
-  "type": "commonjs",
-  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "dependencies": {
-    "parcel": "^2.16.4",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
   }
 }
