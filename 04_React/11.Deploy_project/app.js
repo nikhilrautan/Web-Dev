@@ -33,7 +33,6 @@ const newElement = (
     </>
 )
 
-
 // React Component
 // function Based Component
 
