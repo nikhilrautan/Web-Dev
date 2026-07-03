@@ -13,9 +13,9 @@ import ReactDOM from "react-dom/client"
 // JSX => React.createElement() => react element(JSObject) => HTML Element
 
 // JSX: JS ke expression
-const names = "Rohit";
+const names = "Nikhil";
 const obj = {
-    age:23,
+    age:21,
     salary:60
 }
 
