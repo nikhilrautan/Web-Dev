@@ -35,7 +35,6 @@ const newElement = (
 
 // React Component
 // function Based Component
-
 function greet(){
     return <h1>Aur bhai kaisa hai</h1>
 };
