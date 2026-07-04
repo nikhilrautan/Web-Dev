@@ -9,7 +9,7 @@ function App(){
      <Header/>
     <div className ="middle" style={{display:"flex", gap:"10px" , flexWrap:"wrap"}}>
         {
-          arr.map((value,index)=> <Card key={index} cloth={value.cloth} offer={value.Offer}/>)   
+          arr.map((value,index)=> <Card key={index} cloth={value.cloth} offer={value.Offer} price={value.price}/>)   
         }      
     </div>
     <Footer/>
