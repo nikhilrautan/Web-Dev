@@ -22,21 +22,23 @@ function Card(props){
 const arr = [{cloth:"Tshirt", Offer:"20-40%Off"},{cloth:"Pant", Offer:"30-50%Off"},{cloth:"Skirt", Offer:"10-20%Off"},{cloth:"Kurta", Offer:"30-60%Off"},{cloth:"Patloon", Offer:"11-40%Off"},{cloth:"Shoes", Offer:"40-60%Off"},{cloth:"Shirt", Offer:"10-20%Off"}]
 
 
-// function App issi k andr teeno cheejein (Header, Body,Footer hoga).
+// function App issi k andr teeno cheejein (Header, Body,Footer hoga)
 function App(){
   return(
     // Header
     // Body
     <div style={{display:"flex", gap:"10px" , flexWrap:"wrap"}}>
-        <Card cloth="T-shirt" offer="20-80%off" />
+        // itna sb krne ki jarurt nhii haii
+        {/* <Card cloth="T-shirt" offer="20-80%off" />
         <Card cloth="Jeans" offer="30-80%off"/>
         <Card cloth="pant" offer="50-60%off"/>
         <Card cloth="Kurta" offer="30-80%off"/>
         <Card cloth="Pajama" offer="10-80%off" />
         <Card cloth="T-shirt" offer="20-80%off"/>
         <Card cloth="T-shirt" offer="20-80%off"/>
-        <Card cloth="T-shirt" offer="20-80%off"/>
+        <Card cloth="T-shirt" offer="20-80%off"/> */}
 
+   
         {
           arr.map((value,index)=> <Card key={index} cloth={value.cloth} offer={value.Offer}/>)   
         }
