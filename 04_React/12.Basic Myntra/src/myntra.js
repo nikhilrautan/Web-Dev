@@ -6,7 +6,6 @@ import Footer from "./component/Footer";
 import arr from "./utils/dummy";
 
 
-
 function App(){
 
   function sortArray(){
