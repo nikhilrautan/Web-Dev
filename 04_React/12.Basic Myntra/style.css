@@ -53,3 +53,8 @@ body{
     background-color: rgb(28, 81, 28);
     color: white;
 }
+
+button{
+    height: 50px;
+    background-color: orange;
+}

@@ -4,9 +4,17 @@ import Header from "./component/Header";
 import Card from "./component/Card";
 import Footer from "./component/Footer";
 import arr from "./utils/dummy";
+
+
+
 function App(){
+
+  function sortArray(){
+
+ }
   return(<>
      <Header/>
+     <button onClick={sortArray}> Sort by Price </button>
     <div className ="middle" style={{display:"flex", gap:"10px" , flexWrap:"wrap"}}>
         {
           arr.map((value,index)=> <Card key={index} cloth={value.cloth} offer={value.Offer} price={value.price}/>)   
