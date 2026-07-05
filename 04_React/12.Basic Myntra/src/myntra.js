@@ -8,7 +8,7 @@ import arr from "./utils/dummy";
 
 
 function App(){
-  
+
   function sortArray(){
  }
   return(<>
@@ -23,7 +23,6 @@ function App(){
  </>
   )
 }
-
 
 const Root = ReactDOM.createRoot(document.getElementById('root'));
 Root.render(<App/>);
