@@ -8,7 +8,6 @@ import arr from "./utils/dummy";
 
 
 function App(){
-
   function sortArray(){
  }
   return(<>
