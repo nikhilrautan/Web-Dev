@@ -17,7 +17,7 @@ function App(){
 
  function PriceAbove499(){
   const B = arr.filter((value)=>value.Price>499);
-  
+  setA(B);
  }
 
 
