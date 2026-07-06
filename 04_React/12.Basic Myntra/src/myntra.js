@@ -10,7 +10,7 @@ function App(){
 
   function sortArray(){
     arr.sort((a,b)=> a.price - b.price);
-    console.log
+    console.log()
  }
   return(<>
      <Header/>
