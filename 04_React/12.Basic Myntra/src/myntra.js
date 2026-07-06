@@ -8,7 +8,7 @@ import arr from "./utils/dummy";
 
 function App(){
 
-  let[] = useState(arr);
+  let[A,setA] = useState(arr);
   function sortArray(){
     arr.sort((a,b)=> a.price - b.price);
     console.log(arr);
