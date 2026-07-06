@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client"
 import Header from "./component/Header";
 import Card from "./component/Card";
@@ -8,7 +8,7 @@ import arr from "./utils/dummy";
 
 function App(){
 
-  let[] = use
+  let[] = useState()
   function sortArray(){
     arr.sort((a,b)=> a.price - b.price);
     console.log(arr);
