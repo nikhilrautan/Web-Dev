@@ -9,6 +9,7 @@ import arr from "./utils/dummy";
 function App(){
 
   function sortArray(){
+    arr.sort((a,b)=> a.price - b.price);
  }
   return(<>
      <Header/>
