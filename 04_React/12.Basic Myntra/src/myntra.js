@@ -14,6 +14,12 @@ function App(){
     setA([...A]); // humne yha pr ek duplicate array bnaya uska refrence change krne k liye.
     // console.log(A);
  }
+
+ function PriceAbove499(){
+  arr.filter((value)=>value.Price>499)
+ }
+
+
   return(<>
      <Header/>
      <button onClick={sortArray}> Sort by Price </button>
