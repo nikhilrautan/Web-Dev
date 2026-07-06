@@ -11,8 +11,8 @@ function App(){
   let[A,setA] = useState(arr);
   function sortArray(){
     A.sort((a,b)=> a.price - b.price);
-    setA(A);
-    console.log(arr);
+    setA([...A]); // humne yha pr ek duplicate array bnaya uska refrence change krne k liye.
+    // console.log(A);
  }
   return(<>
      <Header/>
