@@ -10,7 +10,7 @@ function App(){
 
   let[A,setA] = useState(arr);
   function sortArray(){
-    arr.sort((a,b)=> a.price - b.price);
+    A.sort((a,b)=> a.price - b.price);
     setA(A);
     console.log(arr);
  }
