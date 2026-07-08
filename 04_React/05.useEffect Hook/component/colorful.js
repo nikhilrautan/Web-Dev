@@ -14,7 +14,6 @@ function Colorful({name}){
     
         // console.log("second")
     
-       
         return (
             <>
               <h2>{name}</h2>
