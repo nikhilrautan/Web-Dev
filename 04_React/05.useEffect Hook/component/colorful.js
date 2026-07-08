@@ -30,6 +30,7 @@ function Colorful({name}){
 
 }
 
+
 export default React.memo(Colorful);// export krne k time use krte hai isko (memorize krlo ki colorful wale ko koi effect nhi pdega )
 // yha pr humne react memo Hook use kiya hai jo bolta hai ki ek k changes dusre ko affect nhi krne chaiye (kyuki hume us change ki need hi nhi hai)
 // is case m jb hum counter wale ko change kr rhe hai to wo coulorful wale ko affect nhi krega ab
