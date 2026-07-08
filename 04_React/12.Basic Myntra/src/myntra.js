@@ -20,7 +20,6 @@ function App(){
   setA(B);
  }
 
-
   return(<>
      <Header/>
      <button onClick={sortArray}> Sort by Price </button>
