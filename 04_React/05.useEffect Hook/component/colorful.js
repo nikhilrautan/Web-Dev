@@ -13,7 +13,7 @@ function Colorful({name}){
         },[color]);
     
         // console.log("second")
-    
+      
         return (
             <>
               <h2>{name}</h2>
