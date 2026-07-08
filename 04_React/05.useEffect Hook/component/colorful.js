@@ -36,3 +36,6 @@ export default React.memo(Colorful);// export krne k time use krte hai isko (mem
 // is case m jb hum counter wale ko change kr rhe hai to wo coulorful wale ko affect nhi krega ab
 
 // haan agr props change ho rhe hai to memo allow krega re-render krne ko 
+//aur agr nhi hore hai to nhii krega
+
+//React memo also increase code overhead to we try to use it ver very less  
