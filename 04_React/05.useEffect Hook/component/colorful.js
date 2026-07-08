@@ -38,4 +38,4 @@ export default React.memo(Colorful);// export krne k time use krte hai isko (mem
 // haan agr props change ho rhe hai to memo allow krega re-render krne ko 
 //aur agr nhi hore hai to nhii krega
 
-//React memo also increase code overhead to we try to use it ver very less  
+//React memo also increase code overhead to we try to use it ver very less (only when it is very important)
