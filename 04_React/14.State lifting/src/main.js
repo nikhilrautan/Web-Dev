@@ -1,6 +1,6 @@
 import React, { useState , useMemo, useCallback, useEffect} from "react";
 import reactDOM from "react-dom/client"
-
+import Increment from "./increment"
 
 function App(){
     const [count,setCount] = useState(0);
@@ -9,7 +9,7 @@ function App(){
         <>
       <h1>Counter is :{count}</h1>
       <Increment counts={count}/>
-      
+
         </>
     )
 }
