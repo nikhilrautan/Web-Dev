@@ -7,7 +7,7 @@ function App(){
 
     return (
         <>
-      <h1>Counter is :{count}</h1>
+      <h1>Parent Counter is :{count}</h1>
       <Increment counts={count}/>
 
         </>
