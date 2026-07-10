@@ -1,3 +1,4 @@
+// closure concept
 let b = 10;
 
 function greet(){
