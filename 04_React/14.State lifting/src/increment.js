@@ -1,6 +1,6 @@
 
 
-function Increment(){
+export default function Increment({counts}){
 
     return (
         <>
