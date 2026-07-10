@@ -8,7 +8,7 @@ function App(){
     return (
         <>
       <h1>Parent Counter is :{count}</h1>
-      <Increment counts={count}/>
+      <Increment counts={count} setCounts= {setCount}/>
 
         </>
     )

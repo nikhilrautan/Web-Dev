@@ -1,10 +1,10 @@
 
 
-export default function Increment({counts}){
+export default function Increment({counts,setCounts}){
 
     return (
         <>
-        <h2>Counter is :{counts}</h2>
+        <h2>Child Counter is :{counts}</h2>
         <button>Increment</button>
         </>
     )
