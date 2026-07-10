@@ -57,5 +57,4 @@ function PasswordGenerator(){
    )
 }
 
-
 ReactDOM.createRoot(document.getElementById('root')).render(<PasswordGenerator/>);
