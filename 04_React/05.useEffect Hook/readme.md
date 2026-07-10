@@ -18,6 +18,7 @@ A simple React project demonstrating the **useEffect Hook** and how it manages s
 - CSS
 - Parcel
 
+
 ## 📚 Learning Outcome
 
 By completing this project, you'll understand how to use `useEffect` for handling side effects, controlling component updates, and writing cleaner, more efficient React applications.
