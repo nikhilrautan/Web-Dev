@@ -23,10 +23,9 @@ function App(){
 }
 
 
-// First create a Create Context
-// Provid data ko uske andar: Descendent
-// Consume the context
-
+// 1.First create a Create Context
+// 2.Provid data ko uske andar: Descendent
+// 3.Consume the context
 
 
 
