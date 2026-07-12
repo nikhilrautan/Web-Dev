@@ -10,7 +10,7 @@ export default function Details(){
             <Link to="Hi">Hi</Link>
         </nav>
 
-       
+    
         <Outlet></Outlet>
         </>
     )
