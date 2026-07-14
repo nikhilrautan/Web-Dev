@@ -8,6 +8,7 @@ export default function Details(){
             <Link to="/Details">Details</Link>
             <Link to="Hello">Hello</Link>
             <Link to="Hi">Hi</Link>
+            
         </nav>
 
         <Outlet></Outlet>
