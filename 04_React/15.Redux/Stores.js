@@ -7,3 +7,5 @@ const stores = configureStore({
     slice2 : slice2Reducer,
     }
 })
+
+export default stores;
