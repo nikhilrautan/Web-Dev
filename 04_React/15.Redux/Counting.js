@@ -8,8 +8,8 @@ export default function Counting(){
     return(
         <>
         <h1>Counter is {count}</h1>
-        <button>Increment</button>
-        <button>Decrement</button>
+        <button onClick={()=>dispatch(Increment())}>Increment</button>
+        <button onClick={()=>dispatch(Decrement())}>Decrement</button>
         <button>Reset</button>
         </>
     )
