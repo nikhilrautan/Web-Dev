@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 
 export default function Counting(){
+ 
 
-
-    const count = useSelector((state)=>state.slice.slice1.count)
+    const count = useSelector((state)=>state.slice.slice1.count);
+   const dispatch =  useDispatch();
     return(
         <>
         <h1>Counter is {count}</h1>
