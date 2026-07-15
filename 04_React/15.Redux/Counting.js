@@ -10,7 +10,7 @@ export default function Counting(){
         <h1>Counter is {count}</h1>
         <button onClick={()=>dispatch(Increment())}>Increment</button>
         <button onClick={()=>dispatch(Decrement())}>Decrement</button>
-        <button>Reset</button>
+        <button onClick={()=>dispatch(Reset())}>Reset</button>
         </>
     )
 }
