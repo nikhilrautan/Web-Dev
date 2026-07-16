@@ -10,6 +10,7 @@ export default function Counting(){
     console.log(Increment());
     console.log(Decrement());
 
+    
     return(
         <>
         <h1>Counter is {count}</h1>
