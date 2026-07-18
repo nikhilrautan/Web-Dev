@@ -12,12 +12,13 @@ const app = express();
 
 // Dynamic vlaues le rhe hai isse
 app.use("/about/:id",(req,res)=>{ // mtlb jo bhi vlaue vha 'id' pr hogi wo laake dedo
-   res.send({"Name": Nikhil,"age":20});
+    console.log(req.params);
+    res.send({"Name": "Nikhil","age":20});
 })
 
 
 app.use("/about",(req,res)=>{
-   res.send({"Name": Nikhil,"age":20});
+   res.send({"Name": "Nikhil","age":20,"money": 70});
 })
 
 
