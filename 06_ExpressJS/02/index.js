@@ -1,20 +1,21 @@
 const express = require("express");
 const app = express();
 
-
+// Basic Bookstore project
 const BookStore = [
     {id:1,name:"Harry Potter", author:"DevFlux"},
-    {id:2, name:"Friends", author: "Vikas"},
-    {id:3 , name:"Nexus", author:"Rohit"},
-    {id:4 , name:"DSA", author:"Maharaj"},
+    {id:2, name:"Friends", author: "Yogesh"},
+    {id:3 , name:"Backend", author:"Nikhil"},
+    {id:4 , name:"DSA", author:"Rohit Negi"},
     {id:5, name:"Prem Kahani", author:"Rohan"}
 ]
 
 app.use(express.json());
 
+
 // localhost:3000/book/3
 
-app.get("/book", (req,res)=>{
+app.get("/book", (req,res)=>{ // jb bhi koi is url m aaega m ye info de dunga.
 
     res.send(BookStore);
 })
@@ -41,6 +42,7 @@ app.post("/book", (req,res)=>{
 app.listen(3000, ()=>{
     console.log("Listening at port 3000");
 })
+
 
 
 // // app.use("/user", (req,res)=>{
