@@ -3,6 +3,12 @@ const express = require("express");
 const app = express();
 
 
+// app.use("/abou?t",(req,res)=>{ // is ? se jo uske aaghe ka alphbet hai wo optional bn jata hai 
+//     // use kroge tb bhi chlega aur nhi kroge tb bhi chlega
+//    res.send({"Name": Nikhil,"age":20});
+// })
+
+
 app.use("/about",(req,res)=>{
    res.send({"Name": Nikhil,"age":20});
 })
