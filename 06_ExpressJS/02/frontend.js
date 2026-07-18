@@ -1,5 +1,5 @@
 // Default :  get method
-fetch("http://fkjbnsdfk.com")
+const response2 = await fetch('http://fkjbnsdfk.com/data')
 
 const response = await fetch('https://api.example.com/data',{
   method: 'POST',
