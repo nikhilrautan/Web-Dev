@@ -12,7 +12,6 @@ const BookStore = [
 
 app.use(express.json());
 
-
 // localhost:3000/book/3
 
 app.get("/book", (req,res)=>{ // jb bhi koi is url m aaega m ye info de dunga.
