@@ -20,7 +20,6 @@ app.get("/book", (req,res)=>{ // jb bhi koi is url m aaega m ye info de dunga.
     res.send(BookStore);
 })
 
-
 app.get("/book/:id", (req,res)=>{
 
     const id = parseInt(req.params.id);
