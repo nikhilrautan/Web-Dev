@@ -24,7 +24,23 @@ const FoodMenu = [
     {id:16, food:"Mushroom", category:"veg", price:700},
 ]
 
+const AddToCart = [];
+// user ka jo bhi food add hga, wo idhr jaayega
 
-app.listen(300, ()=>{
-    console.log
+app.get("/food", (req,res)=>{
+    res.status(200).send(FoodMenu);
+})
+
+
+// Authenticate admin here
+// app.use("/admin",Auth)
+
+
+app.post("/admin", Auth, (req,res)=>{
+
+    
+    FoodMenu.push(req.body);
+    res.status(201).send("Item Added Succesfully");
+    
+
 })
