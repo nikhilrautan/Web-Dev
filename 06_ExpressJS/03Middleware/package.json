@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
