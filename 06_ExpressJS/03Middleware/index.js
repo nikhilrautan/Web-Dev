@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
+const {Auth} = require("./middleware/auth")
 
-//CRUD 
+// CRUD: Create Read update Delete
 
-//Database : array
+// Database: array
+
+
+app.use(express.json());
 
 const FoodMenu = [
     {id:1, food:"Chowmein", category:"veg", price:500},
@@ -27,6 +31,7 @@ const FoodMenu = [
 const AddToCart = [];
 // user ka jo bhi food add hga, wo idhr jaayega
 
+
 app.get("/food", (req,res)=>{
     res.status(200).send(FoodMenu);
 })
@@ -44,3 +49,54 @@ app.post("/admin", Auth, (req,res)=>{
     
 
 })
+
+app.delete("/admin/:id", Auth, (req,res)=>{
+    
+    const id = parseInt(req.params.id);
+
+    const index = FoodMenu.findIndex(item => item.id ===id);
+
+        if(index===-1){
+           res.send("Item Doesn't Exist");
+        }
+        else{
+            FoodMenu.splice(index,1);
+            res.send("Succesfully Deleted");
+        }
+    
+    
+})
+
+app.patch("/admin", Auth, (req,res)=>{
+   
+        
+    const id = req.body.id;
+
+    const fooddata = FoodMenu.find(item=> item.id===id);
+
+        if(fooddata){
+            
+            if(req.body.food)
+                fooddata.food = req.body.food;
+            if(req.body.category)
+                fooddata.category = req.body.category;
+            if(req.body.price)
+                fooddata.price = req.body.price;
+
+            res.send("Successfully Updated");
+        }
+        else{
+            res.send("Item not exist")
+        }
+
+
+})
+
+// localhost:3000/admin
+
+
+
+app.listen(3000, ()=>{
+    console.log("Listening at port 3000");
+})
+
