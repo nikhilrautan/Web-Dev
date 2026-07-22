@@ -12,6 +12,8 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",
     "parcel": "^2.16.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "tailwindcss": "^4.3.3"
   }
 }
