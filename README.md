@@ -28,9 +28,11 @@ This repository documents my journey through Full Stack Web Development. It cove
 ## 📂 Repository Structure
 - `01_HTML`
 - `02_CSS`
+- `02.1_TailwindCSS`
 - `03_JavaScript`
 - `04_React`
 - `05_NodeJS`
+- `06_ExpressJS`
 - *(more folders added as I progress)*
 
 ## 🎯 Goal
