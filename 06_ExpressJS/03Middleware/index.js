@@ -109,6 +109,8 @@ app.post("/user/:id",(req,res)=>{
 
 // item ko cart se htane k liye
 app.delete("/user/:id",(req,res)=>{
+  // aise hi try , catch block hum hr jgh use kr skte hai..
+    try{
     const id =parseInt(req.params.id);
 
     const index =AddToCart.findIndex(item=>item.id===id);
@@ -118,6 +120,9 @@ app.delete("/user/:id",(req,res)=>{
     }
     else{
         res.send("Item is not present in Cart");
+    }}
+    catch(err){
+        res.send("Some error:"+ err);
     }
 })
 
@@ -129,10 +134,15 @@ app.get("/user",(req,res)=>{
     res.send(AddToCart);
 })
 
-// Error Handling krne k liye
+// Error Handling krne k liye:
+
+//express.json()-> jyada accha hai "JSON.parse(JSON)" 
+// se kyuki frontend se data (0/1) ki form m aat ahai to ye usse jyada acche se handle jrta hai, 
+// internally wo JSON.parse(JSON) hi use krta hai
 app.get("/dummy",(req,res)=>{
     try{
         JSON.parse("invalid json"); // agr yha valid JSON hai to theekk hai vrna error throw krega
+        throw new Error('BROKEN')
         res.send("Hello Coders");
     }
     catch(err){
