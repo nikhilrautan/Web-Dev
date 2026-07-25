@@ -5,10 +5,7 @@ const {Auth} = require("./middleware/auth")
 // CRUD: Create Read update Delete
 
 // Database: array
-
-
 app.use(express.json());
-
 const FoodMenu = [
     {id:1, food:"Chowmein", category:"veg", price:500},
     {id:2, food:"Butter Naan", category:"veg", price:100},
@@ -130,6 +127,17 @@ app.get("/user",(req,res)=>{
         res.send("Card is empty");
     else
     res.send(AddToCart);
+})
+
+// Error Handling krne k liye
+app.get("/dummy",(req,res)=>{
+    try{
+        JSON.parse("invalid json"); // agr yha valid JSON hai to theekk hai vrna error throw krega
+        res.send("Hello Coders");
+    }
+    catch(err){
+        res.send("Some error occured");
+    }
 })
 
 app.listen(3000, ()=>{
