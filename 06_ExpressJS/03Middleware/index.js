@@ -95,7 +95,36 @@ app.patch("/admin", Auth, (req,res)=>{
 
 // localhost:3000/admin
 
+// agr kisi user ko item add krna hai
+app.post("/user/:id",(req,res)=>{
+    const id = parseInt(req.params.id);
 
+    const foodItem =FoodMenu.find(item=>item.id===id);
+
+    if(foodItem){
+       AddToCart.push(foodItem);
+       res.status(200).send("Item added successfully");
+    }
+    else{
+        res.send("Item Out of Stock");
+    }
+})
+
+// item ko cart se htane k liye
+app.delete("/user/:id",(req,res)=>{
+    const id =parseInt(req.params.id);
+
+    const index =AddToCart.findIndex(item=>item.id===id);
+    if(index!=item){
+        AddToCart.splice(index,1);
+        res.send("Item removed succesfully");
+    }
+    else{
+        res.send("Item is not present in Cart");
+    }
+})
+
+// user ko apne cart k elements ko dhundhna hai to
 
 app.listen(3000, ()=>{
     console.log("Listening at port 3000");
