@@ -115,7 +115,7 @@ app.delete("/user/:id",(req,res)=>{
     const id =parseInt(req.params.id);
 
     const index =AddToCart.findIndex(item=>item.id===id);
-    if(index!=item){
+    if(index!=-1){
         AddToCart.splice(index,1);
         res.send("Item removed succesfully");
     }
