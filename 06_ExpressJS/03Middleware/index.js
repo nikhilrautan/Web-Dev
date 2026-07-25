@@ -126,7 +126,6 @@ app.delete("/user/:id",(req,res)=>{
     }
 })
 
-
 // user ko apne cart k elements ko dhundhna hai to
 app.get("/user",(req,res)=>{
     if(AddToCart.length==0)
