@@ -125,6 +125,12 @@ app.delete("/user/:id",(req,res)=>{
 })
 
 // user ko apne cart k elements ko dhundhna hai to
+app.get("/user",(req,res)=>{
+    if(AddToCart.length==0)
+        res.send("Card is empty");
+    else
+    res.send(AddToCart);
+})
 
 app.listen(3000, ()=>{
     console.log("Listening at port 3000");
