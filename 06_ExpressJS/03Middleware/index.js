@@ -39,7 +39,6 @@ app.get("/food", (req,res)=>{
 // app.use("/admin",Auth) kai baar isko aisa na likh kr jaise neeche likha hai vaise likhte
 
 
-
 app.post("/admin", Auth, (req,res)=>{
 
     
