@@ -34,7 +34,6 @@ app.get("/food", (req,res)=>{
     res.status(200).send(FoodMenu);
 })
 
-
 // Authenticate admin here
 // app.use("/admin",Auth) kai baar isko aisa na likh kr jaise neeche likha hai vaise likhte
 
