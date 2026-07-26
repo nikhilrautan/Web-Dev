@@ -109,6 +109,7 @@ app.post("/user/:id",(req,res)=>{
     }
 })
 
+
 // item ko cart se htane k liye
 app.delete("/user/:id",(req,res)=>{
   // aise hi try , catch block hum hr jgh use kr skte hai..
