@@ -25,6 +25,7 @@ const FoodMenu = [
     {id:16, food:"Mushroom", category:"veg", price:700},
 ]
 
+
 const AddToCart = [];
 // user ka jo bhi food add hga, wo idhr jaayega
 
