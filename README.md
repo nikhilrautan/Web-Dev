@@ -33,6 +33,7 @@ This repository documents my journey through Full Stack Web Development. It cove
 - `04_React`
 - `05_NodeJS`
 - `06_ExpressJS`
+- `07_MongoDB`
 - *(more folders added as I progress)*
 
 ## 🎯 Goal
