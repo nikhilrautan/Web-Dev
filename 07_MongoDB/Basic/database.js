@@ -45,9 +45,15 @@ async function main() {
 const filterDocs = await collection.find({a:3}).toArray();
 console.log('Found documents filtered by {a:3}=>', filterDocs);
 
+
 //UPLOAD a DOCUMENT
 const updateResult = await collection.updateOne({a:3},{$set:{b:1}});
 console.log('Update documents=>',updateResult);
+
+
+//REMOVE DOCUMENT
+const deleteResult = await collection.deleteMany({a:3});
+console.log('Deleted documents=>',deleteResult);
 
 
   return 'done.';
