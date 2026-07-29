@@ -23,6 +23,11 @@ async function main() {
   // The following code examples can be pasted here...
 
   const findResult = await collection.find({});
+  //const ans  = await findResult.toArray();
+
+  for await (const doc of findResult) // ye cursor hume help krega ek ek kr k documents lane m
+                                      // jisse load km pdta hai aur ek ek kr k laate hai
+    console.log(obj);
   console.log('Found documents=>',findResult);
 
   return 'done.';
