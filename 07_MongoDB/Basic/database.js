@@ -31,6 +31,7 @@ async function main() {
     console.log(obj);
   console.log('Found documents=>',findResult);
 
+
   // Document Insertion
   // 1. insertOne:
   const insertResult = await collection.insertOne({name:"Nikhil",age:40});
@@ -39,6 +40,11 @@ async function main() {
   // 2. insertMany:
   const insertResult = await collection.insertMany([{a:1},{a:2},{a:3}]);
   console.log('Inserted documents=>',insertResult);
+
+  // DATA FILTERATION
+const filterDocs = await collection.find({a:3}).toArray();
+console.log('Found documents filtered by {a:3}=>', filterDocs);
+
 
   return 'done.';
 }
