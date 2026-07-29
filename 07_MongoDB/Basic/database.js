@@ -25,8 +25,9 @@ async function main() {
   const findResult = await collection.find({}); // ye cursor kbhi network call nhi krta ye bs un docs ko point krta hai
   //const ans  = await findResult.toArray();
 
-  for await (const doc of findResult) // ye cursor hume help krega ek ek kr k documents lane m
-                                      // jisse load km pdta hai aur ek ek kr k laate hai
+  for await (const doc of findResult) // isse hum network call marenge
+  // ye cursor hume help krega ek ek kr k documents lane m
+  // jisse load km pdta hai aur ek ek kr k laate hai
     console.log(obj);
   console.log('Found documents=>',findResult);
 
