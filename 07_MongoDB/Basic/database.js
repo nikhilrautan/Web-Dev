@@ -22,6 +22,9 @@ async function main() {
 
   // The following code examples can be pasted here...
 
+  const findResult = await collection.find({});
+  console.log('Found documents=>',findResult);
+
   return 'done.';
 }
 
