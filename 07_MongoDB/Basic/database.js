@@ -22,7 +22,7 @@ async function main() {
 
   // The following code examples can be pasted here...
 
-  const findResult = await collection.find({});
+  const findResult = await collection.find({}); // ye cursor kbhi network call nhi krta ye bs un docs ko point krta hai
   //const ans  = await findResult.toArray();
 
   for await (const doc of findResult) // ye cursor hume help krega ek ek kr k documents lane m
