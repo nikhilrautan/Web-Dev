@@ -31,6 +31,10 @@ async function main() {
     console.log(obj);
   console.log('Found documents=>',findResult);
 
+  // Document Insertion
+  const insertResult = await collection.insertOne({name:"Nikhil",age:40});
+  console.log('Inserted documents=>',insertResult);
+
   return 'done.';
 }
 
