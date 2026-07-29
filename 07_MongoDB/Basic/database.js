@@ -23,7 +23,7 @@ async function main() {
   // The following code examples can be pasted here...
 
   const findResult = await collection.find({}); // ye cursor kbhi network call nhi krta ye bs un docs ko point krta hai
-  //const ans  = await findResult.toArray();
+  //const ans  = await findResult.toArray(); // hum .toArray se bhi kr skte the pr (ye poore data ko ek saath le aata hai) Accha nhi hai
 
   for await (const doc of findResult) // isse hum network call marenge
   // ye cursor hume help krega ek ek kr k documents lane m
