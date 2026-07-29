@@ -55,6 +55,10 @@ console.log('Update documents=>',updateResult);
 const deleteResult = await collection.deleteMany({a:3});
 console.log('Deleted documents=>',deleteResult);
 
+//INDEX a COLLECTION
+const indexName = await collection.createIndex({a:1});
+console.log('index name =',indexName);
+
 
   return 'done.';
 }
