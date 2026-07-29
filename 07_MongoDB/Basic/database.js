@@ -32,7 +32,12 @@ async function main() {
   console.log('Found documents=>',findResult);
 
   // Document Insertion
+  // 1. insertOne:
   const insertResult = await collection.insertOne({name:"Nikhil",age:40});
+  console.log('Inserted documents=>',insertResult);
+
+  // 2. insertMany:
+  const insertResult = await collection.insertMany([{a:1},{a:2},{a:3}]);
   console.log('Inserted documents=>',insertResult);
 
   return 'done.';
