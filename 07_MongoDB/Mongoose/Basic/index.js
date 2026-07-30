@@ -16,10 +16,14 @@ app.get("/info",async (req,res)=>{
 
 app.post("/info", async(req,res)=>{
     
+    //nyii info insert krne k liye..
+
     // const ans = new User(req.body);
     // await ans.save();
     
-    try{
+
+    //JB BHI NETWORK CALL KRE TO (TRY,CATCH ) K ANDR KRE
+    try{ // kbhi koi error aaye to usko handle krne k liye
     await User.create(req.body);
     res.send("Succesfully Updated");
     }
