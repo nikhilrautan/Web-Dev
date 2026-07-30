@@ -31,9 +31,15 @@ const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
 
   await User.insertMany([{name:"Yogesh",age:21},{age:25,gender:"Male"}]);
 
+  // find document
   const ans = await User.find({});
   console.log(ans);
+
+  // find document by particulatr field
+   const ans2 =await User.find({name:"Rohit"});
+   console.log(result);
   
+
 }
 
 
