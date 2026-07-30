@@ -28,6 +28,8 @@ const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
 
   // 1 Step m poora krna
   await User.create({name:"Mohan",age:30,city:"Pakistan"});
+
+  await User.insertMany([{name:"Yogesh",age:21},{age:25,gender:"Male"}]);
 }
 
 
