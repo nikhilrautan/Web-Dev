@@ -43,6 +43,8 @@ app.delete("/info", async (req,res)=>{
 app.put("/info", async (req,res)=>{
    
     //UPDATE..
+    //1. updateOne
+    //2. updateMany
     const result = await User.updateOne({ name: 'Mohan' }, { age: 40, city:"Bangladesh"});
     res.send("Updated Succesfully");
 })
