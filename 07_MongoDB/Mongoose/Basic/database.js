@@ -5,8 +5,19 @@ const mongoose = require('mongoose');
 async function main(){
 
   // mongodb se connect ho gye
-  await mongoose.connect("mongodb+srv://admin:Nikhil7@cluster0.tlchu6y.mongodb.net/");
+  await mongoose.connect("mongodb+srv://admin:Nikhil7@cluster0.tlchu6y.mongodb.net/Bookstore");
+
+  // code likhna shuru...
+  const userSchema = new Schema ({
+    name: String,
+    age:Number,
+    city:String,
+    gender:String
+  }) 
 }
+
+//Model lo create === Collection create krna (Table create krna)
+
 
 
 main()
