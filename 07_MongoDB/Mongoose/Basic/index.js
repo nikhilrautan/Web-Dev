@@ -31,15 +31,18 @@ app.post("/info", async(req,res)=>{
         res.status(500).send(err);
     }
 })
-
+ 
+// DELETE KRNA HAI TO...
 app.delete("/info", async (req,res)=>{
 
+    // jiska bhi naam "Vishal" hai usko delete krdo..
     await User.deleteOne({name:"Vishal"});
     res.send("Deleted");
 })
 
 app.put("/info", async (req,res)=>{
    
+    //UPDATE..
     const result = await User.updateOne({ name: 'Mohan' }, { age: 40, city:"Bangladesh"});
     res.send("Updated Succesfully");
 })
