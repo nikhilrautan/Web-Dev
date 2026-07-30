@@ -30,6 +30,10 @@ const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
   await User.create({name:"Mohan",age:30,city:"Pakistan"});
 
   await User.insertMany([{name:"Yogesh",age:21},{age:25,gender:"Male"}]);
+
+  const ans = await User.find({});
+  console.log(ans);
+  
 }
 
 
