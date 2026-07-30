@@ -46,7 +46,7 @@ app.put("/info", async (req,res)=>{
     //1. updateOne
     //2. updateMany
     const result = await User.updateOne({ name: 'Mohan' }, { age: 40, city:"Bangladesh"});
-    // isme ye phla wala dhundhega ki 'Mohan' naam wala aadmi kha hai fir jaake uski value change krdo
+    // isme ye phla wala dhundhega ki 'Mohan' naam wala aadmi kha hai fir jaake uski value change krdo.
     res.send("Updated Succesfully");
 })
 
