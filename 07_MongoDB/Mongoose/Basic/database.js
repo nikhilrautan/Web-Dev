@@ -1,4 +1,5 @@
 const dns = require('dns');
+const { MongoChangeStreamError } = require('mongodb');
 dns.setServers(['8.8.8.8', '8.8.4.4']);
 const mongoose = require('mongoose');
 
@@ -19,10 +20,12 @@ async function main(){
   // humne ek class create krii hai..
 
   const User = mongoose.model("user",userSchema);
-  
+
 //Document ko create kiya hai aur Oject ko create kiya hai..
   const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
   await user1.save();
+
+  await User.create({name:"Mohan",age:30,city:"Pakistan"});
 }
 
 
