@@ -42,7 +42,7 @@ const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
 
 }
 
-
+module.exports = main;
 
 main()
 .then(()=>console.log("Connect to DB"))
