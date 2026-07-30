@@ -14,9 +14,11 @@ async function main(){
     city:String,
     gender:String
   }) 
-}
 
-//Model lo create === Collection create krna (Table create krna)
+  //Model lo create === Collection create krna (Table create krna)
+  const User = mongoose.model("user",userSchema);
+
+}
 
 
 
