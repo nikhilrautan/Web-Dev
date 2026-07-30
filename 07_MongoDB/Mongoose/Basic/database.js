@@ -22,9 +22,11 @@ async function main(){
   const User = mongoose.model("user",userSchema);
 
 //Document ko create kiya hai aur Oject ko create kiya hai..
-  const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
+ // 1 Step m poora krna 
+const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
   await user1.save();
 
+  // 1 Step m poora krna
   await User.create({name:"Mohan",age:30,city:"Pakistan"});
 }
 
