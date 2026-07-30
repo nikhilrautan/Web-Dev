@@ -16,8 +16,11 @@ async function main(){
   }) 
 
   //Model lo create === Collection create krna (Table create krna)
+  // humne ek class create krii hai..
   const User = mongoose.model("user",userSchema);
 
+  const user1 = new User({name:"Nikhil",age:20,city:"Chaukhutia",gender:"Male"});
+  await user1.save();
 }
 
 
