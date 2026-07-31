@@ -9,6 +9,13 @@ app.use(express.json());
 
 app.post("/register", (req,res)=>{
 
+    try{
+
+    }
+    catch(err){
+        res.send("Error"+ err.message);
+    }
+
 })
 
 main()
