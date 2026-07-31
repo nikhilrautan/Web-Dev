@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+   // Schema Create kr diya..
 const userSchema = new Schema({
     firstName:{
         type: String
@@ -21,6 +22,8 @@ const userSchema = new Schema({
         type: String
     },
 })
+
+// Ab Model Create Krenge..
 
 const User = mongoose.model("user",userSchema);
 
