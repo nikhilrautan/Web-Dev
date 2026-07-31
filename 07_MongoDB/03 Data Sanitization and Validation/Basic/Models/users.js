@@ -18,7 +18,9 @@ const userSchema = new Schema({
         max: 70
     },
     gender:{
-        type: String
+        type: String,
+        // isse aisa hoga ki in teeno m se ek value ho tbhii register krna vrna error de dena..
+        enum: ["male","female","others"]
     },
     emailId:{
         type: String,
