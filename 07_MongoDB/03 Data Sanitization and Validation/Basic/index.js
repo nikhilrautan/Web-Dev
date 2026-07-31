@@ -5,7 +5,6 @@ const User = require("./Models/users")
 
 app.use(express.json());
 
-
 // post api
 app.post("/register", async (req,res)=>{
 
@@ -30,7 +29,7 @@ app.get("/info",async(req,res)=>{
    }
 })
 
-  // isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..
+// FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
    app.get("/user/:id", async(req,res)=>{
     try{
       const result = await User.findById(req.params.id);
@@ -41,7 +40,7 @@ app.get("/info",async(req,res)=>{
     }
 })
 
-// user ki info DELETE krne k liye
+// DELETE(user ki info DELETE krne k liye)
  app.delete("/user/:id",async(req,res)=>{
     
     try{
@@ -53,6 +52,8 @@ app.get("/info",async(req,res)=>{
         res.send("Error"+err.message);
     }
  })
+
+ //UPDATE(info/value update krne k liye)
 
 main()
 .then(async ()=>{
