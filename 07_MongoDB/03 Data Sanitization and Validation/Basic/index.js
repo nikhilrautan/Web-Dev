@@ -18,7 +18,15 @@ app.post("/register", async (req,res)=>{
 })
 
 // get api
-
+app.get("/info",async(req,res)=>{
+   try{
+       const result = await User.find();
+       res.send(result);
+   }
+   catch(err){
+    res.send("Error"+ err.message);
+   }
+})
 
 main()
 .then(async ()=>{
