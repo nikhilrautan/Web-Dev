@@ -5,7 +5,7 @@ const User = require("./Models/users")
 
 app.use(express.json());
 
-// post api
+// POST api
 app.post("/register", async (req,res)=>{
 
     try{
@@ -17,8 +17,7 @@ app.post("/register", async (req,res)=>{
     }
 })
 
-
-// get api
+// GET api
 app.get("/info",async(req,res)=>{
    try{
        const result = await User.find();
