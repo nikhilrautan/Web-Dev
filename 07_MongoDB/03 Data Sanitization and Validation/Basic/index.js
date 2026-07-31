@@ -6,17 +6,19 @@ const User = require("./Models/users")
 app.use(express.json());
 
 // post api
-
-app.post("/register", (req,res)=>{
+app.post("/register", async (req,res)=>{
 
     try{
-
+      await User.create(req.body);
+      res.send("User Registered Successfully");
     }
     catch(err){
         res.send("Error"+ err.message);
     }
-
 })
+
+// get api
+
 
 main()
 .then(async ()=>{
