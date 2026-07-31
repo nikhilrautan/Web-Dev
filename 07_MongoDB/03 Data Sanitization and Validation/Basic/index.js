@@ -57,7 +57,9 @@ app.get("/info",async(req,res)=>{
  app.patch("/user",async(req,res)=>{
    
     try{
-     
+      const {_id,...update} = req.body; // destructuring kr rhe hai isse id wala alg ho jaega aur baaki sb update wale m chle jaenge..
+      await User.findByIdAndUpdate(id,update);
+      res.send("Update Successfully");
     }
     catch(err){
         res.send("Error"+err.message);
