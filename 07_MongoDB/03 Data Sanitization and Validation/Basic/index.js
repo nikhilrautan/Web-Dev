@@ -41,6 +41,19 @@ app.get("/info",async(req,res)=>{
     }
 })
 
+// user ki info DELETE krne k liye
+ app.delete("/user/:id",async(req,res)=>{
+    
+    try{
+      await User.findByIdAndDelete(req.params.id);
+      res.send("Deleted Successfully");
+      
+    }
+    catch(err){
+
+    }
+ })
+
 main()
 .then(async ()=>{
     console.log("Connected to DB")
