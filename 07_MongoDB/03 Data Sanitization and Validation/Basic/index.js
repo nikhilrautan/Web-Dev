@@ -50,7 +50,7 @@ app.get("/info",async(req,res)=>{
       
     }
     catch(err){
-
+        res.send("Error"+err.message);
     }
  })
 
