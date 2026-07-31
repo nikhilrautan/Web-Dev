@@ -41,6 +41,7 @@ app.get("/info",async(req,res)=>{
 })
 
 // DELETE(user ki info DELETE krne k liye)
+// User.findByIdAndDelete
  app.delete("/user/:id",async(req,res)=>{
     
     try{
@@ -53,7 +54,10 @@ app.get("/info",async(req,res)=>{
     }
  })
 
- //UPDATE(info/value update krne k liye)
+ //UPDATE : findByIdAndUpdate()
+ app.patch("/user",async(req,res)=>{
+
+ })
 
 main()
 .then(async ()=>{
