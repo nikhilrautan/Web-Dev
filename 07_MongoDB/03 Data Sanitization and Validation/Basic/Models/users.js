@@ -26,7 +26,9 @@ const userSchema = new Schema({
         unique: true,
     },
     photo:{
-        type: String
+        type: String,
+        // agr user photo nhii lgata hai to default photo dedo
+        default:" (kisi default photo ka link..)This is the default photo"
     },
 })
 
