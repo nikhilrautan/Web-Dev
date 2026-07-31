@@ -39,8 +39,7 @@ app.get("/info",async(req,res)=>{
     }
 })
 
-// DELETE(user ki info DELETE krne k liye)
-// User.findByIdAndDelete
+// DELETE: User.findByIdAndDelete
  app.delete("/user/:id",async(req,res)=>{
     
     try{
@@ -58,11 +57,11 @@ app.get("/info",async(req,res)=>{
    
     try{
       const {_id,...update} = req.body; // destructuring kr rhe hai isse id wala alg ho jaega aur baaki sb update wale m chle jaenge..
-      await User.findByIdAndUpdate(id,update);
+      await User.findByIdAndUpdate(_id,update);
       res.send("Update Successfully");
     }
     catch(err){
-        res.send("Error"+err.message);
+        res.send("Error" +err.message);
     }
  })
 
