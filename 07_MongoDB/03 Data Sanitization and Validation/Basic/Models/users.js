@@ -7,7 +7,10 @@ const userSchema = new Schema({
         type: String
     },
     lastName:{
-        type: String
+        type: String,
+        required: true,
+        minLength: 3,
+        maxLength: 20
     },
     age:{
         type: Number,
@@ -18,7 +21,9 @@ const userSchema = new Schema({
         type: String
     },
     emailId:{
-        type: String
+        type: String,
+        required: true,
+        unique: true,
     },
     photo:{
         type: String

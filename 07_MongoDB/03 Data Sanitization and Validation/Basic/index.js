@@ -13,7 +13,7 @@ app.post("/register", async (req,res)=>{
       res.send("User Registered Successfully");
     }
     catch(err){
-        res.send("Error"+ err.message);
+        res.send("Error "+ err.message);
     }
 })
 
@@ -24,7 +24,7 @@ app.get("/info",async(req,res)=>{
        res.send(result);
    }
    catch(err){
-    res.send("Error"+ err.message);
+    res.send("Error "+ err.message);
    }
 })
 
