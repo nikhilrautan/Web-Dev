@@ -28,6 +28,15 @@ app.get("/info",async(req,res)=>{
    }
 })
 
+app.get("/user/:id", async(req,res)=>{
+    try{
+
+    }
+    catch(err){
+        
+    }
+})
+
 main()
 .then(async ()=>{
     console.log("Connected to DB")
