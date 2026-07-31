@@ -5,6 +5,7 @@ const User = require("./Models/users")
 
 app.use(express.json());
 
+
 // post api
 app.post("/register", async (req,res)=>{
 
@@ -16,6 +17,7 @@ app.post("/register", async (req,res)=>{
         res.send("Error"+ err.message);
     }
 })
+
 
 // get api
 app.get("/info",async(req,res)=>{
@@ -29,7 +31,7 @@ app.get("/info",async(req,res)=>{
 })
 
   // isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..
-app.get("/user/:id", async(req,res)=>{
+   app.get("/user/:id", async(req,res)=>{
     try{
       const result = await User.findById(req.params.id);
       res.send(result);
