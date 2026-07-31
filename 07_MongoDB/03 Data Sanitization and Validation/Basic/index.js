@@ -28,6 +28,7 @@ app.get("/info",async(req,res)=>{
    }
 })
 
+  // isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..
 app.get("/user/:id", async(req,res)=>{
     try{
       const result = await User.findById(req.params.id);
