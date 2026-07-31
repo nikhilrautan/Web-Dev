@@ -26,6 +26,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
         unique: true,
+        trim: true ,//extra spaces hta dega
     },
     photo:{
         type: String,
