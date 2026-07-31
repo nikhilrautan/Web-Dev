@@ -56,7 +56,13 @@ app.get("/info",async(req,res)=>{
 
  //UPDATE : findByIdAndUpdate()
  app.patch("/user",async(req,res)=>{
-
+   
+    try{
+     
+    }
+    catch(err){
+        res.send("Error"+err.message);
+    }
  })
 
 main()
