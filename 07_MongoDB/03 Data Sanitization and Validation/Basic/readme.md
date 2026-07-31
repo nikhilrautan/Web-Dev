@@ -1,81 +1,92 @@
-<!-- Node js history -->
-<!-- CJS vs MJS module -->
-<!-- type: module, mjs extension -->
-<!-- sync or async , strict and non strict -->
-<!-- calculator folder to export them in one go -->
+📸 Instagram Clone — Backend API
 
+A simple Node.js + Express + MongoDB (Mongoose) backend demonstrating full CRUD operations with both API-level and Schema-level data validation.
 
-<!-- Dominos example -->
+🛠️ Tech Stack
+Layer	Technology
+Runtime	Node.js
+Framework	Express.js
+Database	MongoDB Atlas
+ODM	Mongoose
+📁 Project Structure
+.
+├── index.js           # Express app & all API routes
+├── database.js         # MongoDB connection logic
+├── Models/
+│   └── users.js        # Mongoose schema/model for User
+└── README.md
+🚀 Getting Started
+1. Install dependencies
+bash
+npm install express mongoose
+2. Configure your database
 
-Micorservice/ Monolith
+Open database.js and update the MongoDB connection string with your own Atlas credentials.
 
-1: Codebase
-2: Scalability
-3: Development
-4: Deployment
-5: Tech Stack
-6: Bug Issue
-7: server failure
-8: Maintainence
-9: Debugging
-10: Cost
+⚠️ Security tip: Don't hardcode credentials. Use a .env file with the dotenv package instead — especially before pushing to a public repo.
 
+3. Start the server
+bash
+node index.js
 
+Or, with auto-restart on file changes:
 
-Code	Meaning	               When to Use
-200	    OK	                    Successful GET/PUT/PATCH
-201	    Created	                Resource created (POST)
-400	    Bad Request	            Invalid client input
-401	    Unauthorized            Authentication needed
-403	    Forbidden	              No permission
-404	    Not Found	              Resource doesn't exist
-500	    Internal Server Error	Server-side failure
+bash
+nodemon index.js
+4. You're live 🎉
+http://localhost:3000
+📡 API Endpoints
+Method	Endpoint	Description
+POST	/register	Create a new user (with mandatory field check)
+GET	/info	Get all users
+GET	/user/:id	Get a single user by ID
+DELETE	/user/:id	Delete a user by ID
+PATCH	/user	Update a user (send _id + fields to update)
+🧪 Example Requests
+<details> <summary><strong>➕ Register a user</strong></summary>
+http
+POST /register
+Content-Type: application/json
 
+{
+  "firstName": "Shivam",
+  "lastName": "Mavi",
+  "age": 30,
+  "gender": "male",
+  "emailId": "shivam@gmail.com"
+}
+</details> <details> <summary><strong>✏️ Update a user</strong></summary>
+http
+PATCH /user
+Content-Type: application/json
 
+{
+  "_id": "64f1a2b3c4d5e6f7a8b9c0d1",
+  "age": 31
+}
+</details>
+✅ Validation Strategy
 
+This project validates data at two levels:
 
+1. API-level validation (in index.js) /register checks that mandatory fields — firstName, emailId, age — exist in the request body before touching the database.
 
+⚡ Faster feedback for the client
+💰 Saves an unnecessary DB round-trip
 
-const response = await fetch('https://api.example.com/data', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name: 'John', age: 30 })
-});
+2. Schema-level validation (in Models/users.js) Enforced by Mongoose itself:
 
+Required fields, min/max length, min/max age
+Unique, lowercase, trimmed, and immutable email
+Default photo if none is provided
 
-JSON.parse("invalid json");
+3. runValidators on updates Mongoose skips validation during updates by default — this project explicitly re-enables it on PATCH /user so bad data can't sneak in through an edit.
 
+🐞 Known Issues / TODO
+ Casing bug: mandatoryField checks for "firstname" (lowercase), but the schema field is firstName — this mismatch will always fail the check.
+ Validator bug: Gender validator uses .includes[value] instead of .includes(value) — this throws a runtime error instead of validating.
+ Security: MongoDB credentials are hardcoded in database.js — move to a .env file.
+ Error handling: All responses currently return 200 OK, even on failure. Add proper HTTP status codes (400, 404, 500).
+📝 License
 
-
-
-
-The CAP theorem, also known as Brewer’s theorem, is a principle that applies to distributed databases and systems. It states that a distributed system can simultaneously guarantee at most two out of the following three properties:
-
-Consistency
-Definition: Every read receives the most recent write or an error. In other words, all nodes in the system reflect the same data at the same time.
-Implication: After an update, every client sees the update immediately. This is similar to the behavior of a single-node database.
-
-Availability
-Definition: Every request (read or write) receives a response—regardless of whether the response contains the most recent data.
-Implication: The system is always operational and responsive. However, during certain failures, the data returned might not be up-to-date.
-
-Partition Tolerance
-Definition: The system continues to operate even if network partitions (communication breakdowns between nodes) occur.
-Implication: Since network failures are inevitable in distributed systems, partition tolerance is generally non-negotiable.
-
-
-
-
-BSON encodes JSON-like documents in a binary format that includes type information, which makes it efficient to parse and traverse.
-
-
-
-Track and sector
-
-
-
-Leo Medium: https://medium.com/data-science-in-your-pocket/dont-be-a-vibe-coder-30fa7c525971
-
- 
+MIT — feel free to use this project for learning purposes.

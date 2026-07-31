@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
    // Schema Create kr diya..
+
+   // yha jo validation krenge ->(Schema level Validation)
 const userSchema = new Schema({
     firstName:{
         type: String
@@ -15,7 +17,8 @@ const userSchema = new Schema({
     age:{
         type: Number,
         min: 14,
-        max: 70
+        max: 70,
+        required: true,
     },
     gender:{
         type: String,
@@ -32,17 +35,18 @@ const userSchema = new Schema({
         required: true,
         unique: true,
         trim: true ,//extra spaces hta dega
-        lowercase: true,// chahe hmne Uppercase m bheja ho pr store lowercase m hoga
+        lowercase: true,// chahe hmne Uppercase m bheja ho pr store lowercase m hoga.
+        immutable: true, // ek baar jo register ho gya wo changes nhi kr skta 
     },
     photo:{
         type: String,
         // agr user photo nhii lgata hai to default photo dedo
         default:" (kisi default photo ka link..)This is the default photo"
     },
-})
+},{timestamps: true}) // is timestamps se kb bna hai,kb update krna hai sb pta chl jata hai
+
 
 // Ab Model Create Krenge..
-
 const User = mongoose.model("user",userSchema);
 
 module.exports = User;

@@ -5,10 +5,23 @@ const User = require("./Models/users")
 
 app.use(express.json());
 
+// yha jo validation krenge->(API Level Validation)
+
 // POST api
 app.post("/register", async (req,res)=>{
 
     try{
+   // Validate: kya uske andr firstname hai bhi ki nhii? 
+   // 1. DB ki cost bchegii
+   // 2. User experience accha hora(no delay)
+    const mandatoryField = ["firstname","emailId","age"]
+               // isse hum check kr lenge ki jo jo mandatory fields bnai hai humne ky aho present hai ki nhii (agr nhii hai to error throw krega)     
+    const IsAllowed = mandatoryField.every((k)=> Object.keys(req.body).includes(k));
+
+    if(!IsAllowed)
+         throw new Error("Fields Missing");
+
+
       await User.create(req.body);
       res.send("User Registered Successfully");
     }
@@ -57,7 +70,11 @@ app.get("/info",async(req,res)=>{
    
     try{
       const {_id,...update} = req.body; // destructuring kr rhe hai isse id wala alg ho jaega aur baaki sb update wale m chle jaenge..
-      await User.findByIdAndUpdate(_id,update,{"runValidators":true}); // yh apr 'runValidators' use krke hum usko bol rh ehai ki update krte k baad bhi validate krna khii glt value store na ho jae
+
+                                      // API level Validation:
+
+      await User.findByIdAndUpdate(_id,update,{"runValidators":true}); // yh apr 'runValidators' use krke hum usko bol rhe hai ki update krte k baad bhi validate krna 
+      // khii glt value store na ho jae (By default ye ON nhi hota hume krna pdta hai..)
       res.send("Update Successfully");
     }
     catch(err){
