@@ -57,7 +57,7 @@ app.get("/info",async(req,res)=>{
    
     try{
       const {_id,...update} = req.body; // destructuring kr rhe hai isse id wala alg ho jaega aur baaki sb update wale m chle jaenge..
-      await User.findByIdAndUpdate(_id,update);
+      await User.findByIdAndUpdate(_id,update,{"runValidators":true}); // yh apr 'runValidators' use krke hum usko bol rh ehai ki update krte k baad bhi validate krna khii glt value store na ho jae
       res.send("Update Successfully");
     }
     catch(err){
