@@ -31,6 +31,7 @@ async function Hashing() {
 
   // Basically database m hashcode + salt dono el saath store hote hai (mtlb undono ki combined values)
 
+  
   // STEP 2: Plain text input ko stored hash ke saath compare karna
   // bcrypt.compare() input ko SAME salt se dobara hash karta hai (jo hashpass se nikala jata hai)
   // aur check karta hai ki dono hash match karte hain ya nahi
