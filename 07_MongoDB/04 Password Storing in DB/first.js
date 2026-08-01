@@ -25,8 +25,10 @@ async function Hashing() {
   //   $2b$   -> bcrypt algorithm ka version/identifier
   //   10     -> cost factor (kitne salt rounds use hue)
   //   baaki  -> salt + actual hash ek saath mile hue
+  //  salt -> $N5ehmB3b5kW1D3Mdhpl5JO
+  //  hashcode -> r9WCkz9sqnsdjUtut8BgG5rFTzOyqcO
 
-  // database m hashcode + salt dono el saath store hote hai (mtlb undono ki combined values)
+  // Basically database m hashcode + salt dono el saath store hote hai (mtlb undono ki combined values)
 
   // STEP 2: Plain text input ko stored hash ke saath compare karna
   // bcrypt.compare() input ko SAME salt se dobara hash karta hai (jo hashpass se nikala jata hai)
