@@ -10,6 +10,7 @@ app.use(express.json());
 // POST api
 app.post("/register", async (req,res)=>{
 
+    
     try{
    // Validate: kya uske andr firstname hai bhi ki nhii? 
    // 1. DB ki cost bchegii
