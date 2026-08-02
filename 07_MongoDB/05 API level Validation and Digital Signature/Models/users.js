@@ -48,5 +48,4 @@ const userSchema = new Schema({
 
 // Ab Model Create Krenge..
 const User = mongoose.model("user",userSchema);
-
 module.exports = User;
