@@ -1,8 +1,8 @@
 
-function validateUser(){
+function validateUser(data){
     const mandatoryField = ["firstName","emailId","age","password"]
 
-    const IsAllowed = mandatoryField.every((k)=> Object.keys(req.body).includes(k));
+    const IsAllowed = mandatoryField.every((k)=> Object.keys(data).includes(k));
 
     if(!isAllowed)
         throw new Error("Fields Missing");

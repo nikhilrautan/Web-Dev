@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const main = require("./database");
 const User = require("./Models/users");
-const validateUser= require("/utils/validateUser");
+const validateUser= require("./utils/validateUser");
 
 app.use(express.json());
 
