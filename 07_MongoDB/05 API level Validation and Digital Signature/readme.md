@@ -1,15 +1,15 @@
-       🔐 User Auth API — Validation & Security Notes
+🔐 User Auth API — Validation & Security Notes
 
 Documentation for the API-level validation and password-security logic used in this Express + Mongoose user API.
 
-       ⚠️ Terminology Correction — Read First
+⚠️ Terminology Correction — Read First
 
 This project does not implement a digital signature. What it actually implements is password hashing (via bcrypt).
 
 These are two different security concepts. Section 4 below explains the difference in detail, and how to add a real digital signature (JWT-based) if that's the end goal.
 
-                 📑 Table of Contents
-Project Structure:
+📑 Table of Contents
+Project Structure
 API Endpoints
 API-Level Validation
 Digital Signature vs Password Hashing
@@ -23,7 +23,6 @@ project/
 │   └── users.js              # Mongoose User schema/model
 └── utils/
     └── validateuser.js       # Manual validation logic (Layer 1)
-
 2. API Endpoints
 Method	Route	Purpose	Validation Applied
 POST	/register	Create a new user	Layer 1 (validUser) + password hashing
@@ -32,12 +31,11 @@ GET	/info	List all users	—
 GET	/user/:id	Get one user by ID	—
 PATCH	/user	Update a user	Layer 2 (runValidators)
 DELETE	/user/:id	Delete a user	—
-
 3. API-Level Validation
 
 Validation happens in two layers, applied at different points in the request lifecycle.
 
-               🧩 Layer 1 — Manual Validation
+🧩 Layer 1 — Manual Validation
 
 File: utils/validateuser.js Runs on: POST /register, before anything touches the database.
 
@@ -60,7 +58,7 @@ function validUser(data) {
 
 If any check fails, an Error is thrown → caught by the route's catch block → an error message is sent back to the client.
 
-               🧩 Layer 2 — Schema-Level Validation (Mongoose)
+🧩 Layer 2 — Schema-Level Validation (Mongoose)
 
 Used in: PATCH /user Mechanism: { runValidators: true }
 
