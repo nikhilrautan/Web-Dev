@@ -32,7 +32,7 @@ app.post("/login",async(req,res)=>{
 
     const people = User.findById(req.body._id); //  Phle user ko nikaal kr lae User.findById se(saari info people wale k andr daal di)
 
-    if(!(req.body.emailId== people.emailId))  // check kra ki kya wo same haii??
+    if(!(req.body.emailId== people.emailId))  // check kra ki kya wo same haii?? // user user ne di hai aur jo mere pass hai
         throw new Error("Invalid credentials"); // nhi hai to error throw kro
 
     const IsAllowed =await bcrypt.compare(req.body.password, people.password);
