@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const main = require("./database");
 const User = require("./Models/users");
-const validUser= require("./utils/validateUser");
+const validUser= require("./utils/validateuser");
+const bcrypt = require("bcrypt");
 
 app.use(express.json());
 
