@@ -31,6 +31,11 @@ app.post("/login",async(req,res)=>{
     //1. cheeje validate krna hai
 
     const people = User.findById(req.body._id);
+
+    if(!(req.body.emailId== people.emailId))
+        throw new Error("Invalid credentials");
+
+    const IsAllowed =await bcrypt.compare(req.body.password, people.password);
     }
     catch(err){
        res.send("Error "+err.message);
