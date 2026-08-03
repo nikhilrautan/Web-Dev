@@ -28,7 +28,9 @@ app.post("/register", async (req,res)=>{
 app.post("/login",async(req,res)=>{
     
     try{
+    //1. cheeje validate krna hai
 
+    const people = User.findById(req.body._id);
     }
     catch(err){
        res.send("Error "+err.message);
