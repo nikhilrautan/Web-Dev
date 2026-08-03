@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const main = require("./database");
 const User = require("./Models/users");
-const validateUser= require("./utils/validateUser");
+const validUser= require("./utils/validateUser");
 
 app.use(express.json());
 
@@ -10,21 +10,9 @@ app.use(express.json());
 
 // POST api
 app.post("/register", async (req,res)=>{
-
     
     try{
-   // Validate: kya uske andr firstname hai bhi ki nhii? 
-   // 1. DB ki cost bchegii
-   // 2. User experience accha hora(no delay)
-    const mandatoryField = ["firstname","emailId","age"]
-               // isse hum check kr lenge ki jo jo mandatory fields bnai hai humne ky aho present hai ki nhii (agr nhii hai to error throw krega)     
-    const IsAllowed = mandatoryField.every((k)=> Object.keys(req.body).includes(k));
-
-    if(!IsAllowed)
-         throw new Error("Fields Missing");
-
-     //Password Validate krenge
-
+        validate(req.body);
       await User.create(req.body);
       res.send("User Registered Successfully");
     }

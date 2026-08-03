@@ -1,5 +1,5 @@
 
-function validateUser(data){
+function valid(data){
     const mandatoryField = ["firstName","emailId","age","password"]
 
     const IsAllowed = mandatoryField.every((k)=> Object.keys(data).includes(k));
@@ -10,4 +10,4 @@ function validateUser(data){
     //Password validation karenge
     // firstName>3 max>20
 };
-module.exports = validateUser;
+module.exports = valideUser;
