@@ -11,6 +11,12 @@ function validUser(data){
 
     if(!validator.isEmail(data.emailId))  // ye check krega ki wo emailId valid hai ki nhii..
      throw new Error("Invalid Email");
+
+     if(!validator.isStrongPassword(data.password)) // aise hi yha pr check krenge ki password strong hai ki nhii..
+        throw new Error("Weak password");
+
+    if(!(data.firstname.length>3  && data.firstName.length<=20)) // same for firstname length
+        throw new Error("Name should have atleast 3 char and atmost 20 char");
     //Password validation karenge
     // firstName>3 max>20
 };
