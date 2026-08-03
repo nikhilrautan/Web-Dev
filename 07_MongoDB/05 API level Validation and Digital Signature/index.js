@@ -36,6 +36,12 @@ app.post("/login",async(req,res)=>{
         throw new Error("Invalid credentials");
 
     const IsAllowed =await bcrypt.compare(req.body.password, people.password);
+
+    if(!isAllowed)
+         throw new Error("Invalid credentials");
+
+    res.send("Login Successfully");
+
     }
     catch(err){
        res.send("Error "+err.message);
