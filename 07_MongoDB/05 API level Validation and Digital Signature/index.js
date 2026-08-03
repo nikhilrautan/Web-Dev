@@ -10,7 +10,7 @@ app.use(express.json());
 app.post("/register", async (req,res)=>{
     
     try{
-        validate(req.body);
+        validUser(req.body);
       await User.create(req.body);
       res.send("User Registered Successfully");
     }
