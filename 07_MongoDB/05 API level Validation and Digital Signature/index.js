@@ -6,9 +6,7 @@ const validUser= require("./utils/validateUser");
 
 app.use(express.json());
 
-// yha jo validation krenge->(API Level Validation)
-
-// POST api
+// Validation k liye humne alg se ek folder bnaya hai..
 app.post("/register", async (req,res)=>{
     
     try{
