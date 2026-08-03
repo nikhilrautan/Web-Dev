@@ -12,8 +12,11 @@ app.post("/register", async (req,res)=>{
     
     try{
         validUser(req.body);
-      await User.create(req.body);
-      res.send("User Registered Successfully");
+        // Converting password into hashing 
+        req.body.password = await bcrypt.hash(req.body.password,10);
+
+        await User.create(req.body);
+        res.send("User Registered Successfully");
     }
     catch(err){
         res.send("Error "+ err.message);
