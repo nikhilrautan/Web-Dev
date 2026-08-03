@@ -22,6 +22,7 @@ app.post("/register", async (req,res)=>{
     if(!IsAllowed)
          throw new Error("Fields Missing");
 
+     //Password Validate krenge
 
       await User.create(req.body);
       res.send("User Registered Successfully");
