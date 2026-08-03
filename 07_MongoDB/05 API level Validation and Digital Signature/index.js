@@ -11,7 +11,9 @@ app.use(express.json());
 app.post("/register", async (req,res)=>{
     
     try{
-        validUser(req.body);
+        validUser(req.body); // aisa assume kro ki wo validateuser yhii present hai bs usse likha/store khi aur kra hai..
+
+
         // Converting password into hashing 
         req.body.password = await bcrypt.hash(req.body.password,10);
 
@@ -20,6 +22,16 @@ app.post("/register", async (req,res)=>{
     }
     catch(err){
         res.send("Error "+ err.message);
+    }
+})
+
+app.post("/login",async(req,res)=>{
+    
+    try{
+
+    }
+    catch(err){
+       res.send("Error "+err.message);
     }
 })
 
