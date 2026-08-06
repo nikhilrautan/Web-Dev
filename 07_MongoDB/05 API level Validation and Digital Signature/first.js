@@ -4,7 +4,6 @@ const bcrypt = require("bcrypt");
 // Yeh original plain password hai (isko kabhi bhi DB mein direct store mat karo!)
 const password = "Nikhil@123";
 
-
 // sbhi k liye differnt salt use krenge...
 async function Hashing() {
   // STEP 1: Password ko hash karna
