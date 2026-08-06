@@ -18,7 +18,7 @@ async function Hashing() {
   // const hashpass = await bcrypt.hash(password, salt); // fir usi salt se hash karo
   // Lekin dono ko ek line mein karna (jaise upar kiya) zyada common aur simple hai
 
-  
+
   console.log("Hashed Password:", hashpass);
   // Example output: $2b$10$N5ehmB3b5kW1D3Mdhpl5JOr9WCkz9sqnsdjUtut8BgG5rFTzOyqcO
   // Hash format samjho aise:  $2b$ 10 $ [22-char salt][31-char hash]
@@ -39,7 +39,6 @@ async function Hashing() {
 
   console.log("Password Match?", ans);
 }
-
 
 // Function ko call kar rahe hain
 Hashing();
