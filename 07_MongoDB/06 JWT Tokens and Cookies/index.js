@@ -65,7 +65,7 @@ app.get("/info",async(req,res)=>{
 
     // validate the user first:
                                 // that secret key
-       const answer = jwt.verify(req.cookies.token,"Nikhil@1347");
+       const payload= jwt.verify(req.cookies.token,"Nikhil@1347");
        // 1.agr ye verify nhi ho paya to error throw kr dega
        //                 or
        // 2.aur agr valid user hoga to payload return krega
