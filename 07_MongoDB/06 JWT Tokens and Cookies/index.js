@@ -33,7 +33,8 @@ app.post("/login",async(req,res)=>{
     try{
     //1. cheeje validate krna hai
 
-    const people = User.findById(req.body._id); //  Phle user ko nikaal kr lae User.findById se(saari info people wale k andr daal di)
+    const people = await User.findOne({emailId:req.body.emailId}); // ab wo is emailId wale ko dhundhega
+                                                                  // aur fir hume cookies dega 
 
     if(!(req.body.emailId== people.emailId))  // check kra ki kya wo same haii?? // user user ne di hai aur jo mere pass hai
         throw new Error("Invalid credentials"); // nhi hai to error throw kro
