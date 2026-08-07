@@ -4,7 +4,8 @@ const main = require("./database");
 const User = require("./Models/users");
 const validUser= require("./utils/validateuser");
 const bcrypt = require("bcrypt");
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
+const jwt = require('jsonwebtoken');
 
 app.use(express.json());
 app.use(cookieParser());
@@ -41,6 +42,9 @@ app.post("/login",async(req,res)=>{
 
     if(!isAllowed)
          throw new Error("Invalid credentials");
+
+        //jwt token
+        jwt.sign()
 
         // hum user ko Login krte hue hi JWT token bheje
                    // key    value
