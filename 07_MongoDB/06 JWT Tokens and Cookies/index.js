@@ -59,6 +59,7 @@ app.post("/login",async(req,res)=>{
 app.get("/info",async(req,res)=>{
    try{
        const result = await User.find();
+       console.log(req.cookies);
        res.send(result);
    }
    catch(err){
