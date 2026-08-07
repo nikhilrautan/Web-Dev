@@ -62,6 +62,10 @@ app.post("/login",async(req,res)=>{
 // GET api
 app.get("/info",async(req,res)=>{
    try{
+
+    // validate the user first:
+                                // that secret key
+    const answer = jwt.verify(req.cookies.token,"Nikhil@1347");
        const result = await User.find();
        console.log(req.cookies);
        res.send(result);
@@ -70,6 +74,7 @@ app.get("/info",async(req,res)=>{
     res.send("Error "+ err.message);
    }
 })
+
 
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
    app.get("/user/:id", async(req,res)=>{
