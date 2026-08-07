@@ -7,8 +7,7 @@ const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser')
 
 app.use(express.json());
-
-app.use(express.json());
+app.use(cookieParser());
 
 // Validation k liye humne alg se ek folder bnaya hai..
 app.post("/register", async (req,res)=>{
