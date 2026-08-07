@@ -40,6 +40,10 @@ app.post("/login",async(req,res)=>{
     if(!isAllowed)
          throw new Error("Invalid credentials");
 
+        // hum user ko Login krte hue hi JWT token bheje
+                   // key    value
+        res.cookie("Token","gvyiewbvejkbwejl");
+
     res.send("Login Successfully");
 
     }
