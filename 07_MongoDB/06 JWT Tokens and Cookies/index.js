@@ -44,7 +44,8 @@ app.post("/login",async(req,res)=>{
          throw new Error("Invalid credentials");
 
         //jwt token
-        jwt.sign()
+                     // payload..                        document sign krne k liye (key..)
+        jwt.sign({_id:people._id, emailId:people.emailId},"")
 
         // hum user ko Login krte hue hi JWT token bheje
                    // key    value
