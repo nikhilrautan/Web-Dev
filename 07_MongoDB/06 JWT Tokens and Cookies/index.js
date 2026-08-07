@@ -65,7 +65,8 @@ app.get("/info",async(req,res)=>{
 
     // validate the user first:
                                 // that secret key
-    const answer = jwt.verify(req.cookies.token,"Nikhil@1347");
+       const answer = jwt.verify(req.cookies.token,"Nikhil@1347");// agr ye verify nhi ho paya to error throw kr dega
+       
        const result = await User.find();
        console.log(req.cookies);
        res.send(result);
