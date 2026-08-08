@@ -1,7 +1,10 @@
- JWT : Header.Payload.DigitalSignature
+Refresh Token: ---> Database m store krenge(aur fir compare krenge agr match nhi hua to error)
+                                    (agr humne password change kr diya to wo phle refresh token match krega aur fir nya refresh token bna kr dega )
 
- Header aur Payload hashed nhi hote bs DigitalSignature hashed hota hai yha..(kyuki agr unpe hashing lg gyi to hum unki actual value nikaal hi nhi paenge)
- *** (coz Hashing is irreversible) ***
+  1 Access token create bhi ho jae 
+  2 Ivalidate wali property bhi chahiye hogii
 
- (Header + Payload)=> HashCode
- (Encrypt The hashcode) => DigitalSignature
+  *** Refresh Token is like  a : "Random String" ***
+
+    Password Change --> Refresh Token (Invalidate kr skte hai)
+                        Access Token (kbhi invaidate nhi hoga)
