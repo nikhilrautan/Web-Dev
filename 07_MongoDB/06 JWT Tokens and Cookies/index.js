@@ -83,18 +83,15 @@ app.get("/info",async(req,res)=>{
 
 
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
-   app.get("/user/:id", async(req,res)=>{
+   app.get("/user", async(req,res)=>{
     try{
          const payload= jwt.verify(req.cookies.token,"Nikhil@1347");
         console.log(payload);
-        const result = await User.find();
-        console.log(req.cookies);
-
+        
+       const result = await User.findById(payload._id); 
+       res.send(result);
 // ab jb hum us user ki info ko get krenge to vha pr payload phle se present hoga
 //  to bina 'id' expose kre hum uski info ko return kra skte hai..
-
-       const result = await User.findById(payload._id); 
-      res.send(result);
     }
     catch(err){
    res.send("Error"+ err.message);
