@@ -64,6 +64,7 @@ app.post("/login",async(req,res)=>{
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
    app.get("/user", async(req,res)=>{
     try{
+
          const payload= jwt.verify(req.cookies.token,"Nikhil@1347");
         console.log(payload);
         
@@ -71,7 +72,8 @@ app.post("/login",async(req,res)=>{
        res.send(result);
 // ab jb hum us user ki info ko get krenge to vha pr payload phle se present hoga
 //  to bina 'id' expose kre hum uski info ko return kra skte hai..
-    }
+   
+}
     catch(err){
    res.send("Error"+ err.message);
     }
