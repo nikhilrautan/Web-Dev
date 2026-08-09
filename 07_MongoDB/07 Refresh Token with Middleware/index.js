@@ -63,7 +63,7 @@ app.post("/login",async(req,res)=>{
 
 
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
-   app.get("/user", async(req,res)=>{
+   app.get("/user",userAuth, async(req,res)=>{
     try{
    res.send(result);
   }
@@ -73,7 +73,7 @@ app.post("/login",async(req,res)=>{
 })
 
 // DELETE: User.findByIdAndDelete
- app.delete("/user/:id",async(req,res)=>{
+ app.delete("/user/:id",userAuth,async(req,res)=>{
     
     try{
       await User.findByIdAndDelete(req.params.id);
