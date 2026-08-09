@@ -65,6 +65,7 @@ app.post("/login",async(req,res)=>{
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
    app.get("/user",userAuth, async(req,res)=>{
     try{
+        // yha pr jo saara code hume likhna pd rha tha ab wo middleware k through use kr rhe hai
    res.send(result);
   }
     catch(err){
@@ -86,7 +87,7 @@ app.post("/login",async(req,res)=>{
  })
 
  //UPDATE : findByIdAndUpdate()
- app.patch("/user",async(req,res)=>{
+ app.patch("/user",userAuth,async(req,res)=>{
    
     try{
       const {_id,...update} = req.body; // destructuring kr rhe hai isse id wala alg ho jaega aur baaki sb update wale m chle jaenge..
