@@ -81,7 +81,10 @@ app.post("/login",async(req,res)=>{
        res.send(result);
 // ab jb hum us user ki info ko get krenge to vha pr payload phle se present hoga
 //  to bina 'id' expose kre hum uski info ko return kra skte hai..
-   
+     
+       if(!result){
+        throw new Error("User Doesn't Exist");
+       }
 }
     catch(err){
    res.send("Error"+ err.message);
