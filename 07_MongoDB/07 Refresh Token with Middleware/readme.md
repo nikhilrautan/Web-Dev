@@ -12,4 +12,4 @@ Refresh Token: ---> Database m store krenge(aur fir compare krenge agr match nhi
   Hume Baar baar validate wala code chalana pd rha tha hr jgh (jaise get, post, delete krne k liye) to isliye yha pr introduce hota hai middleware..
 
           *** Adding Middleware to this code***
-  // req.get/post/delete.. krne k liye to sbse phle user ko authenticate krna hota hai to us Authentication code ko humne yha likh diya aur as a middleware attach krwa diya  
+  req.get/post/delete.. krne k liye to sbse phle user ko authenticate krna hota hai to us Authentication code ko humne yha likh diya aur as a middleware attach krwa diya  
