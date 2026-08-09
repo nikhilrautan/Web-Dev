@@ -60,27 +60,6 @@ app.post("/login",async(req,res)=>{
     }
 })
 
-// GET api
-app.get("/info",async(req,res)=>{
-   try{
-
-    // validate the user first:
-                                // that secret key
-       const payload= jwt.verify(req.cookies.token,"Nikhil@1347");
-       // 1.agr ye verify nhi ho paya to error throw kr dega
-       //                 or
-       // 2.aur agr valid user hoga to payload return krega
-           console.log(payload);
-       const result = await User.find();
-       console.log(req.cookies);
-       res.send(result);
-   }
-   // uper jo bhi error aaye usko ye handle krega
-   catch(err){
-    res.send("Error "+ err.message);
-   }
-})
-
 
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
    app.get("/user", async(req,res)=>{
