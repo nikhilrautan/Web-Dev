@@ -64,8 +64,8 @@ app.post("/login",async(req,res)=>{
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
    app.get("/user", async(req,res)=>{
     try{
-
-         const payload= jwt.verify(req.cookies.token,"Nikhil@1347");
+        const {token}= req.cookies;
+         const payload= jwt.verify(token,"Nikhil@1347");
         console.log(payload);
         
        const result = await User.findById(payload._id); 
