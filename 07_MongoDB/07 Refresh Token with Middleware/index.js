@@ -66,10 +66,15 @@ app.post("/login",async(req,res)=>{
     try{
         const {token}= req.cookies;
         if(!token){
-            throw new Error("Invalid token")
+            throw new Error("Token doesn't exist");
         }
          const payload= jwt.verify(token,"Nikhil@1347");
-        console.log(payload);
+        // console.log(payload);
+         
+         const {_id}= payload;
+         if(!_id){
+            
+         }
         
        const result = await User.findById(payload._id); 
        res.send(result);
