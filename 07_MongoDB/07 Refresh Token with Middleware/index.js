@@ -66,7 +66,7 @@ app.post("/login",async(req,res)=>{
    app.get("/user",userAuth, async(req,res)=>{
     try{
         // yha pr jo saara code hume likhna pd rha tha ab wo middleware k through use kr rhe hai
-   res.send(result);
+   res.send(req.result);
   }
     catch(err){
    res.send("Error"+ err.message);
