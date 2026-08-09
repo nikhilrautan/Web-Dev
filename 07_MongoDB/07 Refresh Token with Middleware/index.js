@@ -65,6 +65,9 @@ app.post("/login",async(req,res)=>{
    app.get("/user", async(req,res)=>{
     try{
         const {token}= req.cookies;
+        if(!token){
+            throw new Error("Invalid token")
+        }
          const payload= jwt.verify(token,"Nikhil@1347");
         console.log(payload);
         
