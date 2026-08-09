@@ -8,3 +8,5 @@ Refresh Token: ---> Database m store krenge(aur fir compare krenge agr match nhi
 
     Password Change --> Refresh Token (Invalidate kr skte hai)
                         Access Token (kbhi invaidate nhi hoga)
+
+  Hume Baar baar validate wala code chalana pd rha tha hr jgh (jaise get, post, delete krne k liye) to isliye yha pr introduce hota hai middleware.. 
