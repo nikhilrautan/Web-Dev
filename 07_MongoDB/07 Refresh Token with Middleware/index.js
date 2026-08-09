@@ -72,8 +72,9 @@ app.post("/login",async(req,res)=>{
         // console.log(payload);
          
          const {_id}= payload;
+
          if(!_id){
-            
+            throw new Error("Id is missing");
          }
         
        const result = await User.findById(payload._id); 
