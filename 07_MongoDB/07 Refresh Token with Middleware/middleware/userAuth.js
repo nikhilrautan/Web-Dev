@@ -23,6 +23,9 @@ const userAuth = async (req,res,next)=>{
            if(!result){
             throw new Error("User Doesn't Exist");
            }
+           // ek baar user Authenticate ho gya to next pr chle jao..
+
+           next();
     }
         catch(err){
        res.send("Error: "+ err.message);
