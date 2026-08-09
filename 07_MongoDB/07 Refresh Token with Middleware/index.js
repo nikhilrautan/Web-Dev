@@ -6,6 +6,7 @@ const validUser= require("./utils/validateuser");
 const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
+const userAuth = require("./middlware/userAuth");
 
 app.use(express.json());
 app.use(cookieParser());
