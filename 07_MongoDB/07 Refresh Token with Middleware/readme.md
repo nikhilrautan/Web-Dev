@@ -6,6 +6,5 @@ Refresh Token: ---> Database m store krenge(aur fir compare krenge agr match nhi
 
   *** Refresh Token is like  a : "Random String" ***
 
-
     Password Change --> Refresh Token (Invalidate kr skte hai)
                         Access Token (kbhi invaidate nhi hoga)
