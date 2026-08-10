@@ -1,14 +1,17 @@
-Node.js — Basics, Creating Server, Important Questions
-Table of Contents
-What is Node.js
-Key Features
-Modules
-Creating a Server — Core http module
-Creating a Server — Express
-Event Loop
-Important Interview Questions
-Core Modules Cheat Sheet
-Revision Sheet
+Node.js — Basics, Server Creation & Interview Notes
+
+A quick-reference guide to Node.js fundamentals — what it is, how to spin up a server (with and without Express), how the event loop works, and the interview questions that come up most often.
+
+📑 Table of Contents
+1. What is Node.js
+2. Key Features
+3. Modules
+4. Creating a Server — Core http Module
+5. Creating a Server — Express
+6. Event Loop
+7. Interview Questions
+8. Core Modules Cheat Sheet
+9. Revision Sheet
 1. What is Node.js
 
 Node.js ek JavaScript runtime hai jo browser ke bahar (server side) JS chalane deta hai. Chrome ke V8 engine pe based hai.
@@ -17,7 +20,9 @@ Language nahi hai — ek runtime environment hai
 Single-threaded, but non-blocking I/O ki wajah se concurrency efficiently handle karta hai
 Use hota hai: backend APIs, CLI tools, real-time apps (chat, streaming)
 
-One-line recap: Node.js = V8 + JS outside browser + async I/O.
+📌 Recap: Node.js = V8 engine + JS outside the browser + async I/O.
+
+⬆ Back to top
 
 2. Key Features
 Feature	Iska matlab
@@ -26,7 +31,9 @@ Single-threaded event loop	Ek thread pe callbacks/promises se multiple requests 
 NPM ecosystem	Sabse bada package registry, ready-made libraries
 Cross-platform	Windows / Linux / Mac sab pe chalta hai
 
-One-line recap: Async + single thread + huge npm ecosystem.
+📌 Recap: Async + single thread + huge npm ecosystem.
+
+⬆ Back to top
 
 3. Modules in Node.js
 
@@ -36,22 +43,23 @@ js
 // math.js (exporting)
 const add = (a, b) => a + b;
 module.exports = { add };
-
+js
 // index.js (importing)
 const { add } = require("./math");
 console.log(add(2, 3)); // 5
+Types of Modules
+Type	Description	Example
+Core	Built-in, no install needed	fs, http, path, os, events
+Local	Files you write yourself	./math.js
+Third-party	Installed via npm	express, mongoose
 
-Types of modules
+ES Modules (import/export) bhi use hote hain — package.json me "type": "module" set karke.
 
-Core — built-in, no install needed (fs, http, path, os, events)
-Local — khud ki banayi hui files
-Third-party — npm se install (express, mongoose, ...)
+📌 Recap: Core / Local / Third-party — teen types of modules.
 
-ES Modules (import/export) bhi use hota hai — package.json me "type": "module" set karke.
+⬆ Back to top
 
-One-line recap: Core / Local / Third-party — teen types of modules.
-
-4. Creating a Server (Core http module)
+4. Creating a Server — Core http Module
 js
 // server.js
 const http = require("http");
@@ -72,12 +80,14 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
+bash
+node server.js
 
-Run: node server.js
+📌 Recap: http.createServer + req.url / req.method checks + res.end.
 
-One-line recap: http.createServer + req.url/req.method checks + res.end.
+⬆ Back to top
 
-5. Creating a Server (Express)
+5. Creating a Server — Express
 bash
 npm init -y
 npm install express
@@ -105,17 +115,20 @@ app.listen(3000, () => {
   console.log("Server running on http://localhost:3000");
 });
 
-One-line recap: Express = routing + middleware + JSON handling, minus the boilerplate of core http.
+📌 Recap: Express = routing + middleware + JSON handling, minus the boilerplate of core http.
 
-6. Event Loop (Important Concept)
+⬆ Back to top
+
+6. Event Loop
 
 Node.js single-threaded hai, phir bhi concurrent kaam karta hai — iska credit jaata hai Event Loop ko.
 
-Call Stack -> Node APIs (async tasks) -> Callback Queue -> Event Loop -> Call Stack
+text
+Call Stack → Node APIs (async tasks) → Callback Queue → Event Loop → Call Stack
 Sync code turant call stack pe run hota hai
 Async tasks (setTimeout, file read, DB query) background (libuv) me chalte hain
 Complete hone pe callback Callback Queue me jaata hai
-Event loop dekhta hai call stack khali hai ya nahi, khali ho to queue se callback utha kar run karta hai
+Event loop check karta hai call stack khali hai ya nahi, khali ho to queue se callback utha kar run karta hai
 js
 console.log("1");
 
@@ -127,20 +140,20 @@ console.log("3");
 
 // Output: 1, 3, 2
 
-One-line recap: Sync first, async callbacks later — event loop hi concurrency ka core hai.
+📌 Recap: Sync first, async callbacks later — event loop hi concurrency ka core hai.
 
-7. Important Interview Questions
+⬆ Back to top
 
-Q1. Node.js single-threaded hai to concurrent requests kaise handle karta hai?
+7. Interview Questions
+<details> <summary><strong>Q1. Node.js single-threaded hai to concurrent requests kaise handle karta hai?</strong></summary>
 
 Event loop + libuv (background thread pool). Blocking ops background me offload hote hain, main thread free rehta hai.
 
-Q2. require vs import — difference?
+</details> <details> <summary><strong>Q2. <code>require</code> vs <code>import</code> — difference?</strong></summary>
 
 require = CommonJS (sync, Node default). import = ES Modules (modern JS standard).
 
-Q3. Blocking vs Non-blocking code?
-
+</details> <details> <summary><strong>Q3. Blocking vs Non-blocking code?</strong></summary>
 js
 // Blocking (synchronous)
 const fs = require("fs");
@@ -153,25 +166,23 @@ fs.readFile("file.txt", "utf-8", (err, data) => {
   console.log(data);
 });
 console.log("Runs before file read completes");
-
-Q4. process.nextTick() aur microtasks kya hain?
+</details> <details> <summary><strong>Q4. <code>process.nextTick()</code> aur microtasks kya hain?</strong></summary>
 
 process.nextTick() aur Promises (.then) = microtask queue, jo macrotasks (setTimeout/setInterval) se pehle run hoti hai.
 
-Q5. Middleware kya hota hai (Express)?
+</details> <details> <summary><strong>Q5. Middleware kya hota hai (Express)?</strong></summary>
 
 Function jo request-response ke beech chalta hai, route handler se pehle. next() se control aage pass hota hai.
 
-Q6. npm vs npx?
+</details> <details> <summary><strong>Q6. <code>npm</code> vs <code>npx</code>?</strong></summary>
 
 npm = install/manage packages. npx = kisi package ko bina globally install kiye run karna.
 
-Q7. package.json vs package-lock.json?
+</details> <details> <summary><strong>Q7. <code>package.json</code> vs <code>package-lock.json</code>?</strong></summary>
 
 package.json = dependencies + metadata (version ranges). package-lock.json = exact installed versions, sabke system pe same rehne ke liye.
 
-Q8. Environment variables kaise use karte hain?
-
+</details> <details> <summary><strong>Q8. Environment variables kaise use karte hain?</strong></summary>
 js
 // .env
 PORT=3000
@@ -180,9 +191,7 @@ js
 // app.js
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
-
-Q9. Error handling kaise karte hain?
-
+</details> <details> <summary><strong>Q9. Error handling kaise karte hain?</strong></summary>
 js
 // try/catch
 try {
@@ -195,7 +204,11 @@ try {
 app.use((err, req, res, next) => {
   res.status(500).json({ message: err.message });
 });
-8. Common Core Modules Cheat Sheet
+</details>
+
+⬆ Back to top
+
+8. Core Modules Cheat Sheet
 Module	Use
 fs	File system ops — read/write/delete files
 path	File/folder paths — path.join, path.resolve
@@ -212,7 +225,13 @@ emitter.on("greet", (name) => {
 });
 
 emitter.emit("greet", "World");
-9. Revision Sheet (30-second recap)
+
+⬆ Back to top
+
+9. Revision Sheet
+
+30-second recap before an interview.
+
 Node.js = V8 engine + JS outside browser
 Single-threaded but non-blocking I/O → handles concurrency
 3 module types: Core / Local / Third-party
@@ -223,3 +242,5 @@ Middleware = function between request and response, calls next()
 npm installs packages, npx runs them without installing
 package.json = version ranges, package-lock.json = exact locked versions
 Use .env + dotenv for config, try/catch or Express error middleware for errors
+
+⬆ Back to top
