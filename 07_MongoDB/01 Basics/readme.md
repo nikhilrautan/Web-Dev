@@ -1,81 +1,81 @@
-<!-- Node js history -->
-<!-- CJS vs MJS module -->
-<!-- type: module, mjs extension -->
-<!-- sync or async , strict and non strict -->
-<!-- calculator folder to export them in one go -->
-
-
-<!-- Dominos example -->
-
-Micorservice/ Monolith
-
-1: Codebase
-2: Scalability
-3: Development
-4: Deployment
-5: Tech Stack
-6: Bug Issue
-7: server failure
-8: Maintainence
-9: Debugging
-10: Cost
-
-
-
-Code	Meaning	               When to Use
-200	    OK	                    Successful GET/PUT/PATCH
-201	    Created	                Resource created (POST)
-400	    Bad Request	            Invalid client input
-401	    Unauthorized            Authentication needed
-403	    Forbidden	              No permission
-404	    Not Found	              Resource doesn't exist
-500	    Internal Server Error	Server-side failure
-
-
-
-
-
-
-const response = await fetch('https://api.example.com/data', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ name: 'John', age: 30 })
-});
-
-
-JSON.parse("invalid json");
-
-
-
-
-
-The CAP theorem, also known as Brewer’s theorem, is a principle that applies to distributed databases and systems. It states that a distributed system can simultaneously guarantee at most two out of the following three properties:
-
-Consistency
-Definition: Every read receives the most recent write or an error. In other words, all nodes in the system reflect the same data at the same time.
-Implication: After an update, every client sees the update immediately. This is similar to the behavior of a single-node database.
-
-Availability
-Definition: Every request (read or write) receives a response—regardless of whether the response contains the most recent data.
-Implication: The system is always operational and responsive. However, during certain failures, the data returned might not be up-to-date.
-
-Partition Tolerance
-Definition: The system continues to operate even if network partitions (communication breakdowns between nodes) occur.
-Implication: Since network failures are inevitable in distributed systems, partition tolerance is generally non-negotiable.
-
-
-
-
-BSON encodes JSON-like documents in a binary format that includes type information, which makes it efficient to parse and traverse.
-
-
-
-Track and sector
-
-
-
-Leo Medium: https://medium.com/data-science-in-your-pocket/dont-be-a-vibe-coder-30fa7c525971
-
+# MongoDB Basics 
+ 
+A quick intro to MongoDB — the **M** in **MERN** (MongoDB, Express, React, Node).
+ 
+## What is MongoDB?
+ 
+MongoDB is a **NoSQL database** that stores data as flexible, JSON-like documents instead of rows and tables like traditional SQL databases. This makes it a natural fit for JavaScript-based apps like MERN, since documents look just like JS objects.
+ 
+```js
+{
+  name: "Alice",
+  age: 25,
+  email: "alice@example.com"
+}
+```
+ 
+## Key Terms
+ 
+| SQL         | MongoDB     |
+|-------------|-------------|
+| Database    | Database    |
+| Table       | Collection  |
+| Row         | Document    |
+| Column      | Field       |
+ 
+## Where it Fits in MERN
+ 
+```
+React (frontend) → Express + Node (backend/API) → MongoDB (database)
+```
+ 
+Your Node/Express server connects to MongoDB (usually via **Mongoose**, an ODM library) to store and retrieve data for your app.
+ 
+## Getting Started
+ 
+1. **Install MongoDB locally** or use **MongoDB Atlas** (free cloud database — easiest for MERN projects).
+2. **Install Mongoose** in your Node project:
+```bash
+   npm install mongoose
+```
+3. **Connect to MongoDB** in your Express app:
+```js
+   const mongoose = require("mongoose");
+ 
+   mongoose.connect("mongodb://localhost:27017/myApp")
+     .then(() => console.log("MongoDB connected"))
+     .catch((err) => console.log(err));
+```
+4. **Define a Schema & Model**:
+```js
+   const userSchema = new mongoose.Schema({
+     name: String,
+     email: String,
+     age: Number
+   });
+ 
+   const User = mongoose.model("User", userSchema);
+```
+5. **Use it in your routes**:
+```js
+   // Create
+   const newUser = await User.create({ name: "Alice", email: "alice@example.com" });
+ 
+   // Read
+   const users = await User.find();
+ 
+   // Update
+   await User.findByIdAndUpdate(id, { age: 26 });
+ 
+   // Delete
+   await User.findByIdAndDelete(id);
+```
+ 
+## Useful Links
+ 
+- [MongoDB Atlas (free cloud DB)](https://www.mongodb.com/cloud/atlas)
+- [Mongoose Docs](https://mongoosejs.com/docs/)
+- [MongoDB Docs](https://www.mongodb.com/docs/)
+---
+*This is a starting point — as your MERN project grows, look into schema validation, relationships (refs/populate), and connecting via environment variables for production.*
  
