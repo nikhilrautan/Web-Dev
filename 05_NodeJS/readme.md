@@ -232,15 +232,13 @@ emitter.emit("greet", "World");
 
 30-second recap before an interview.
 
-Node.js = V8 engine + JS outside browser
-Single-threaded but non-blocking I/O → handles concurrency
-3 module types: Core / Local / Third-party
-Server: http.createServer() (manual) or Express (routing + middleware built-in)
-Event Loop: sync runs first → async callbacks go to queue → event loop picks them up when call stack is empty
-Microtasks (process.nextTick, Promises) run before macrotasks (setTimeout)
-Middleware = function between request and response, calls next()
-npm installs packages, npx runs them without installing
-package.json = version ranges, package-lock.json = exact locked versions
-Use .env + dotenv for config, try/catch or Express error middleware for errors
-
-⬆ Back to top
+1   Node.js = V8 engine + JS outside browser
+2   Single-threaded but non-blocking I/O → handles concurrency
+3   module types: Core / Local / Third-party
+4   Server: http.createServer() (manual) or Express (routing + middleware built-in)
+5   Event Loop: sync runs first → async callbacks go to queue → event loop picks them up when call stack is empty
+6   Microtasks (process.nextTick, Promises) run before macrotasks (setTimeout)
+7   Middleware = function between request and response, calls next()
+8   npm installs packages, npx runs them without installing
+9   package.json = version ranges, package-lock.json = exact locked versions
+10  Use .env + dotenv for config, try/catch or Express error middleware for errors
