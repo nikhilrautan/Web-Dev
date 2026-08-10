@@ -22,7 +22,7 @@ Use hota hai: backend APIs, CLI tools, real-time apps (chat, streaming)
 
 📌 Recap: Node.js = V8 engine + JS outside the browser + async I/O.
 
-⬆ Back to top
+
 
 2. Key Features
 Feature	Iska matlab
@@ -33,7 +33,7 @@ Cross-platform	Windows / Linux / Mac sab pe chalta hai
 
 📌 Recap: Async + single thread + huge npm ecosystem.
 
-⬆ Back to top
+
 
 3. Modules in Node.js
 
@@ -57,7 +57,7 @@ ES Modules (import/export) bhi use hote hain — package.json me "type": "module
 
 📌 Recap: Core / Local / Third-party — teen types of modules.
 
-⬆ Back to top
+
 
 4. Creating a Server — Core http Module
 js
@@ -85,7 +85,7 @@ node server.js
 
 📌 Recap: http.createServer + req.url / req.method checks + res.end.
 
-⬆ Back to top
+
 
 5. Creating a Server — Express
 bash
@@ -142,7 +142,6 @@ console.log("3");
 
 📌 Recap: Sync first, async callbacks later — event loop hi concurrency ka core hai.
 
-⬆ Back to top
 
 7. Interview Questions
 <details> <summary><strong>Q1. Node.js single-threaded hai to concurrent requests kaise handle karta hai?</strong></summary>
@@ -206,7 +205,7 @@ app.use((err, req, res, next) => {
 });
 </details>
 
-⬆ Back to top
+
 
 8. Core Modules Cheat Sheet
 Module	Use
@@ -226,7 +225,7 @@ emitter.on("greet", (name) => {
 
 emitter.emit("greet", "World");
 
-⬆ Back to top
+
 
 9. Revision Sheet
 
