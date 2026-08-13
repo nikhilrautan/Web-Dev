@@ -9,7 +9,7 @@ const userAuth = async (req,res,next)=>{
             if(!token){
                 throw new Error("Token doesn't exist");
             }
-             const payload= jwt.verify(token,"Nikhil@1347");
+             const payload= jwt.verify(token,process.env.SECRET_KEY);
             // console.log(payload);
              
              const {_id}= payload;
