@@ -7,7 +7,7 @@ const { MongoClient } = require('mongodb');
 // Connection URL
 // username password cluster
 
-const url ="mongodb+srv://admin:Nikhil7@cluster0.tlchu6y.mongodb.net/?appName=Cluster0";
+const url = package.env.DB_CONNECT_PORT;
 const client = new MongoClient(url);
 
 // Database Name

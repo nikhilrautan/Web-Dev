@@ -54,7 +54,7 @@ app.put("/info", async (req,res)=>{
 main()
 .then(async ()=>{
     console.log("Connected to DB")
-    app.listen(3000, ()=>{
+    app.listen(package.env.PORT, ()=>{
         console.log("Listening at port 3000");
     })
 })
