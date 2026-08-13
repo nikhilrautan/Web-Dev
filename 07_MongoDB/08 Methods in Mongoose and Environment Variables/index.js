@@ -10,7 +10,7 @@ const userAuth = require("./middleware/userAuth");
 require('dotenv').config();
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
-
+const commentRouter = require("./routes/comment");
 
 app.use(express.json());
 app.use(cookieParser());
@@ -21,7 +21,7 @@ app.use("/auth",authRouter); // jb bhi ye '/' dekhega wo seedha authRouter wale 
  app.use("/user",userRouter);    // "/user"->isliye kra kyuki vha sbke initials user the
  //  2: get, delete, patch wale humne ek saath rkh diye
 
-
+ app.use("/comment",commentRouter); // same for comment we made a seprate route..
 
 
 main()

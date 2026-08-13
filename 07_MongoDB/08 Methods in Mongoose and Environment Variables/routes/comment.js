@@ -13,3 +13,5 @@ commentRouter.patch("/",(req,res)=>{
 commentRouter.delete("/",(req,res)=>{
     res.send("Comment deleted");
 })
+
+module.exports = commentRouter;
