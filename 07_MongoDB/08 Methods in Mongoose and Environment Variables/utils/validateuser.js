@@ -3,7 +3,7 @@ const validator = require("validator");
 function validUser(data){
     const mandatoryField = ["firstName","emailId","age","password"]
 
-    const IsAllowed = mandatoryField.every((k)=> Object.keys(data).includes(k));
+    const isAllowed = mandatoryField.every((k)=> Object.keys(data).includes(k));
 
     if(!isAllowed)
         throw new Error("Fields Missing");
@@ -15,7 +15,7 @@ function validUser(data){
      if(!validator.isStrongPassword(data.password)) // aise hi yha pr check krenge ki password strong hai ki nhii..
         throw new Error("Weak password");
 
-    if(!(data.firstname.length>3  && data.firstName.length<=20)) // same for firstname length
+    if(!(data.firstName.length>3  && data.firstName.length<=20)) // same for firstname length
         throw new Error("Name should have atleast 3 char and atmost 20 char");
     //Password validation karenge
     // firstName>3 max>20

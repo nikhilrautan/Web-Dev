@@ -1,4 +1,9 @@
+const { JsonWebTokenError } = require('jsonwebtoken');
 const mongoose = require('mongoose');
+const bcrypt = require("bcrypt");
+const jwt = require('jsonwebtoken');
+
+
 const { Schema } = mongoose;
 
    // Schema Create kr diya..
@@ -26,7 +31,7 @@ const userSchema = new Schema({
         //enum: ["male","female","others"]
            // or
        validate(value){
-        if(!["male","female","others"].includes[value])
+        if(!["male","female","others"].includes(value))
         throw new Error("Invalid Gender");
        }
     },
@@ -38,6 +43,10 @@ const userSchema = new Schema({
         lowercase: true,// chahe hmne Uppercase m bheja ho pr store lowercase m hoga.
         immutable: true, // ek baar jo register ho gya wo changes nhi kr skta 
     },
+    password:{
+        type: String,
+        requires: true,
+    },
     photo:{
         type: String,
         // agr user photo nhii lgata hai to default photo dedo
@@ -47,10 +56,18 @@ const userSchema = new Schema({
 
 
 // method ko aise create krte hai
-userSchema.methods.FunctionName = Function(){
-
+userSchema.methods.getJWT = function(){  // yha pr 'this' bhi people ko hi reflect krta hai  
+     // yha pr arrow function use mt krna kyuki usme 'this' ka mtlb alag hota hai
+     const ans = jwt.sign({_id:this._id, emailId:this.emailId},process.env.SECRET_KEY);
+     return ans; // ab ye 'ans' return hoke vha token k andr chle jaega , jha isko call kr rhe hai..
 }
-
+ 
+  // same hum verifyPassword k liye kr rhe hai
+                                                // yha pr jo user ne password bheja hai usko pass kr denge
+userSchema.methods.verifyPassword = async function(Userpassword){
+   const ans = await bcrypt.compare(Userpassword, this.password); // fir dono passwords ko compare krenge aur 'ans' kr denge
+   return ans;
+}
 
 // Ab Model Create Krenge..
 const User = mongoose.model("user",userSchema);

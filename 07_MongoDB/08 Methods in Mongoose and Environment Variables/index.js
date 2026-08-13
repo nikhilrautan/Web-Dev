@@ -6,14 +6,14 @@ const validUser= require("./utils/validateuser");
 const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
-const userAuth = require("./middlware/userAuth");
+const userAuth = require("./middleware/userAuth");
 
 app.use(express.json());
 app.use(cookieParser());
 
 // Validation k liye humne alg se ek folder bnaya hai..
 app.post("/register", async (req,res)=>{
-    
+    console.log("REGISTER ROUTE HIT - VERSION CHECK 123");
     try{
         validUser(req.body); // aisa assume kro ki wo validateuser yhii present hai bs usse likha/store khi aur kra hai..
 
@@ -21,7 +21,7 @@ app.post("/register", async (req,res)=>{
         // Converting password into hashing 
         req.body.password = await bcrypt.hash(req.body.password,10);
 
-        await User.create(req.body);
+        await User.create(req.body); // ye ek object(document) create krta hai aur usko database m store kr deta hai
         res.send("User Registered Successfully");
     }
     catch(err){
@@ -40,14 +40,21 @@ app.post("/login",async(req,res)=>{
     if(!(req.body.emailId== people.emailId))  // check kra ki kya wo same haii?? // user user ne di hai aur jo mere pass hai
         throw new Error("Invalid credentials"); // nhi hai to error throw kro
 
-    const IsAllowed =await bcrypt.compare(req.body.password, people.password);
+    // const IsAllowed =await bcrypt.compare(req.body.password, people.password);  
+    // iska bhi humne method bna diya:::
+                    // ye object -> method call -> user ne jo password bheja hai
+    const isAllowed = await people.verifyPassword(req.body.password);
 
     if(!isAllowed)
          throw new Error("Invalid credentials");
 
-        //jwt token
-                            // 1 payload..     2.document sign krne k liye (key..)   3.kb expire hoga,seconds->100sec ya fir string->"10d"
-       const token= jwt.sign({_id:people._id, emailId:people.emailId},"Nikhil@1347",{expiresIn:100});
+
+       //     //jwt token (ab ye jwt token hum seedhe users.js m bnaenge aur fir yha call krenge)
+       //                         // 1 payload..     2.document sign krne k liye (key..)   3.kb expire hoga,seconds->100sec ya fir string->"10d"
+       //    const token= jwt.sign({_id:people._id, emailId:people.emailId},"Nikhil@1347",{expiresIn:100});
+
+        //aise call krenge--->
+        const token = people.getJWT();
 
         // hum user ko Login krte hue hi JWT token bheje
                    // key    value
@@ -106,7 +113,7 @@ app.post("/login",async(req,res)=>{
 main()
 .then(async ()=>{
     console.log("Connected to DB")
-    app.listen(3000, ()=>{
+    app.listen(process.env.PORT, ()=>{
         console.log("Listening at port 3000");
     })
 })
