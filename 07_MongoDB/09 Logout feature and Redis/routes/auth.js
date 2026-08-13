@@ -71,7 +71,7 @@ authRouter.post("/login",async(req,res)=>{
 // 2nd solution : jo cookies hai vhi expire krdo 
 authRouter.post("/logout",async(req,res)=>{
 
-    try{
+    try{                        // isse cookies expire ho jaengi..
          res.send("token",null,{expires: new Date(Date.now())});
          res.send("Logged out Successfully");
     }
