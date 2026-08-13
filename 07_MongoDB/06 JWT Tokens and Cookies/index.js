@@ -46,7 +46,7 @@ app.post("/login",async(req,res)=>{
 
         //jwt token
                             // 1 payload..     2.document sign krne k liye (key..)   3.kb expire hoga,seconds->100sec ya fir string->"10d"
-       const token= jwt.sign({_id:people._id, emailId:people.emailId},"Nikhil@1347",{expiresIn:100});
+       const token= jwt.sign({_id:people._id, emailId:people.emailId},process.env.SECRET_KEY,{expiresIn:100});
 
         // hum user ko Login krte hue hi JWT token bheje
                    // key    value
@@ -85,7 +85,7 @@ app.get("/info",async(req,res)=>{
 // FIND(isse hum kisi bhi user ko search kr skte hai jiski id hmare pass available hai..)
    app.get("/user", async(req,res)=>{
     try{
-         const payload= jwt.verify(req.cookies.token,"Nikhil@1347");
+         const payload= jwt.verify(req.cookies.token,process.env.SECRET_KEY);
         console.log(payload);
         
        const result = await User.findById(payload._id); 
@@ -131,7 +131,7 @@ app.get("/info",async(req,res)=>{
 main()
 .then(async ()=>{
     console.log("Connected to DB")
-    app.listen(3000, ()=>{
+    app.listen(process.env.PORT, ()=>{
         console.log("Listening at port 3000");
     })
 })
