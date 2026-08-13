@@ -1,12 +1,8 @@
 
+logout api
 
-jha jha bgi humne apni crucial info ko hard code kiya hai usko hum .env m daal dete hai 
- jaise : 1 secret key(digital sign key)
-         2  
+ 1st solution : response me Invalid cookies send krdo taaki wo firse jo nya token bheja tha usse login na ho pae
 
- Aur fir us KEY ko jha use kr rhe hai vha laane k liye : 'process.env.KEY_NAME'
-                                                         ye ek global object hai 
+ 2nd solution : jo cookies hai vhi expire krdo 
 
-        .env --> process.env (m excess krne k liye hume 'npm i dotenv') krna hota hai aur apni main js file m  import krna pdta hai .. : require('dotenv').config();
-
-dotenv : dotenv is a zero dependency module that loads environment variables from a .env file into process.env. 
+ yha pr bhi ek glti hai : jaise agr user ne apni cookies copy kr k rkhi hongi to wo dobara usse use kr k firse login kr skta haii
