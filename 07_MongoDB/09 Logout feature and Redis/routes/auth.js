@@ -67,7 +67,7 @@ authRouter.post("/login",async(req,res)=>{
 
 // logout api
 
-// 1st solution : response me invalid cookies send krdo taaki wo firse jo nya token bheja tha usse login na ho pae
+// 1st solution : response me Invalid cookies send krdo taaki wo firse jo nya token bheja tha usse login na ho pae
 // 2nd solution : jo cookies hai vhi expire krdo 
 authRouter.post("/logout",async(req,res)=>{
 
