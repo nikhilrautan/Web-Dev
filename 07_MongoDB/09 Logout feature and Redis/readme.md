@@ -20,4 +20,8 @@ agr hum DB use na kr k seedhe apni RAM pr hi ye saare operations perform kre to 
 NOW,
  
  ab yha intoduction hota hai ek nye DB ka -> Redis
+ Advantage: 
+ 1.Boht Boht jyada fast hai (suppose MongoDB ek kaam 200-300mili seconds m krta hai ) to Redis wo kaaam 50-100 micro seconds m kr dega
  
+ MongodB : apna data Secondary memory m rkhta hai wo fir usko RAM m lana pdhta hai aur fir wo kaam krega
+ Redis (In_memory DB) : yha data humne RAM k andr rkha hua hai
