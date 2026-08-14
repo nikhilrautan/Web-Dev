@@ -29,4 +29,5 @@ NOW,
  example: jaise hum ek site pr gye aur baar baar refesh mara to hr refresh pr DB call nhii hota 
  (actual data to DB m hi rhega pr jo data hum freqently use kr rhe hai (as a Cache) usse hum Redism rkhte hai)
 
+
  NodeJS aur Redis ko same RAM allocate nhi krte (scalability issue aa jata hai)
