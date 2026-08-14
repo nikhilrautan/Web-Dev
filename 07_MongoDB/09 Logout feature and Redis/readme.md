@@ -16,7 +16,6 @@
 - If not → reject, can't login with it.
 ## Where to store the blocklist?
  
-
 **Option 1: DB**
 - Token invalid → delete from DB.
 - Next login attempt with expired token → check `header.payload.signature` validity.
