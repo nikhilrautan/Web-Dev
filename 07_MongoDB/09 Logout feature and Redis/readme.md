@@ -43,4 +43,3 @@
 ## Important note
 - Don't allocate the same RAM to Node.js and Redis.
 - Doing so causes scalability issues.
- 
