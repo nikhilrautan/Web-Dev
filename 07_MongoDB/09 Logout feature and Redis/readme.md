@@ -23,5 +23,10 @@ NOW,
  Advantage: 
  1.Boht Boht jyada fast hai (suppose MongoDB ek kaam 200-300mili seconds m krta hai ) to Redis wo kaaam 50-100 micro seconds m kr dega
  
- MongodB : apna data Secondary memory m rkhta hai wo fir usko RAM m lana pdhta hai aur fir wo kaam krega
- Redis (In_memory DB) : yha data humne RAM k andr rkha hua hai
+ MongoDB : apna data Secondary memory m rkhta hai wo fir usko RAM m lana pdhta hai aur fir wo kaam krega
+ Redis (In_memory DB) : yha data humne RAM k andr rkha hua hai ---> isme hum aisa data rkhte hai jo hume kuch der tk hi chhaiye hota hai (permanent nhii) fir kuch time baad usko delete krdo (haan Secondary memory bhi hoti hai Redis k pass (data backup m rkhta hai ye Secondory memory m)).
+
+ example: jaise hum ek site pr gye aur baar baar refesh mara to hr refresh pr DB call nhii hota 
+ (actual data to DB m hi rhega pr jo data hum freqently use kr rhe hai (as a Cache) usse hum Redism rkhte hai)
+
+ NodeJS aur Redis ko same RAM allocate nhi krte (scalability issue aa jata hai)
