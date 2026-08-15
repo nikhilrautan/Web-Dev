@@ -29,7 +29,6 @@ const userAuth = async (req,res,next)=>{
            }
            // ek baar user Authenticate ho gya to next pr chle jao..
 
-            // ab jo result aaya tha usko hum re.result m combine kr denge
            
                 const IsBlocked = redisClient.exists(`token:${token}`);
                 // agr blocklist m hoga to error throw krenge
@@ -37,7 +36,8 @@ const userAuth = async (req,res,next)=>{
                 {
                     throw new Error("Invalid Token");
                 }
-            //
+                
+             // ab jo result aaya tha usko hum req.result m combine kr denge
             req.result = result;
             next();
     }
