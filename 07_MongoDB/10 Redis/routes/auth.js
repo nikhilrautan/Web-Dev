@@ -3,6 +3,7 @@ const authRouter = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../Models/users");
 const redisClient = require("../config/redis");
+const jwt = require('jsonwebtoken');
 
 // Basically humne same functionality/ behaviour wale api calls ko ek saath likh diya hai taaki hume uhne excess aur update krne m aasani ho aur wo same kaam kr rhe hai wo ek saath aa jae
 
