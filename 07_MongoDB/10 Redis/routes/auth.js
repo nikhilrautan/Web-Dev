@@ -87,7 +87,7 @@ authRouter.post("/logout",async(req,res)=>{
         // await redisClient.expire(`token:${token}`,1800);  // mtlb is key, value ko is time baad expire kr dena( pr isko hum yha hardcode nhi krenge)
         
         // uske bajae hum ye use krte hai 'expireAt'
-        await redisClient.expireAt(`token:${token}`,payload.exp);
+        await redisClient.expireAt(`token:${token}`,payload.exp); // btata hai ki ye token jb tk rhega (1,Jan,1970) se lakr kitne seconds tk valid rhega..
 
 
                             // isse cookies expire ho jaengi..
