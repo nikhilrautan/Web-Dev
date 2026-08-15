@@ -78,6 +78,10 @@ authRouter.post("/logout",async(req,res)=>{
 
     try{      
         const {token} =req.cookies; // isse hum cookies nikalenge
+        console.log(token);
+
+        const payload = jwt.decode(token);   // isse hum token se payload ko nikaal lenge
+        console.log(payload);
 
         await redisClient.set(`token:${token}`, "Blocked");  // key, value ko set krdo
         await redisClient.expire(`token:${token}`,1800);  // mtlb is key, value ko is time baad expire kr dena(isko hum yha hardcode nhi krenge)
