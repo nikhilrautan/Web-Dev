@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
-const User = require("../Models/users")
+const User = require("../Models/users");
+const redisClient = require('../config/redis');
 
 // req.get/post/delete.. krne k liye to sbse phle user ko authenticate krna hota hai to us Authentication code ko humne yha likh diya aur as a middleware attach krwa diya 
 const userAuth = async (req,res,next)=>{
@@ -30,6 +31,13 @@ const userAuth = async (req,res,next)=>{
 
             // ab jo result aaya tha usko hum re.result m combine kr denge
            
+                const IsBlocked = redisClient.exists(`token:${token}`);
+                // agr blocklist m hoga to error throw krenge
+                if(IsBlocked)
+                {
+                    throw new Error("Invalid Token");
+                }
+            //
             req.result = result;
             next();
     }

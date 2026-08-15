@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const User = require("../Models/users");
 const redisClient = require("../config/redis");
 const jwt = require('jsonwebtoken');
+const userAuth = require("../middleware/userAuth");
 
 // Basically humne same functionality/ behaviour wale api calls ko ek saath likh diya hai taaki hume uhne excess aur update krne m aasani ho aur wo same kaam kr rhe hai wo ek saath aa jae
 
@@ -74,17 +75,20 @@ authRouter.post("/login",async(req,res)=>{
 // Redis k database m humko Blocked Token daal denge (key,value) pair m data store krta hai
 // key:token: ffvdsbsbf aise rkhenge kyuli jb future m hum is key ko dekhenge to pta chl pae ki ye token hai 
 // value:"blocked" (aise kuch bhi naam de skte hai)
-authRouter.post("/logout",async(req,res)=>{
+
+// user kuch bhi tokens bhej skta hai yha pr to is liye hum phle Authneticate krenge aur fir apna kaam kr skte hai
+// userAuth wale ko bhi hmare Blocklist wale tokens ki info honi chahiye(tbhi to check kr paega valid hai bhi ki nhi..)
+authRouter.post("/logout",userAuth,async(req,res)=>{
 
     try{      
         const {token} =req.cookies; // isse hum cookies nikalenge
-        console.log(token);
+        //console.log(token);
 
         const payload = jwt.decode(token);   // isse hum token se payload ko nikaal lenge
-        console.log(payload);
+        //console.log(payload);
 
         await redisClient.set(`token:${token}`, "Blocked");  // key, value ko set krdo
-        // await redisClient.expire(`token:${token}`,1800);  // mtlb is key, value ko is time baad expire kr dena( pr isko hum yha hardcode nhi krenge)
+        // await redisClient.expire(`token:${token}`,1800);  // mtlb is key, value ko is time baad expire kr dena( pr isko hum yha hardcode nhi krenge)ye abhi k time se compare krta hai
         
         // uske bajae hum ye use krte hai 'expireAt'
         await redisClient.expireAt(`token:${token}`,payload.exp); // btata hai ki ye token jb tk rhega (1,Jan,1970) se lakr kitne seconds tk valid rhega..
