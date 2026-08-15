@@ -11,6 +11,7 @@ require('dotenv').config({ quiet: true })
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const commentRouter = require("./routes/comment");
+const redisClient = require("./config/redis");
 
 app.use(express.json());
 app.use(cookieParser());
@@ -23,6 +24,31 @@ app.use("/auth",authRouter); // jb bhi ye '/' dekhega wo seedha authRouter wale 
 
  app.use("/comment",commentRouter); // same for comment we made a seprate route..
 
+
+ const InitilizeConnection = async ()=>{
+   // ab hum yha pr us client ko connect kr waenge 1: Reids connect
+                                                // 2: MongoDB connect
+                                                // 3 : fir Server Listen
+    try{
+    //    await redisClient.connect();
+    //    console.log("Connected to Redis");
+
+    //    await main();
+    //    console.log("Connected To MongoDB");
+
+        await Promise.all([redisClient.connect(), main()]);
+        console.log("DB Connected");
+
+         app.listen(process.env.PORT, ()=>{
+        console.log("Listening at port 3000");
+    })
+}
+    catch(err){
+      console.log("Error :"+err);
+    }
+ }
+
+ InitilizeConnection();
 
 main()
 .then(async ()=>{

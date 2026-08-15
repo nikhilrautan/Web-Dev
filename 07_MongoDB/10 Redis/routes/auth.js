@@ -2,6 +2,7 @@ const express = require("express");
 const authRouter = express.Router();
 const bcrypt = require("bcrypt");
 const User = require("../Models/users");
+const redisClient = require("../config/redis");
 
 // Basically humne same functionality/ behaviour wale api calls ko ek saath likh diya hai taaki hume uhne excess aur update krne m aasani ho aur wo same kaam kr rhe hai wo ek saath aa jae
 
@@ -68,9 +69,18 @@ authRouter.post("/login",async(req,res)=>{
 
 // 1st solution : response me Invalid cookies send krdo taaki wo firse jo nya token bheja tha usse login na ho pae
 // 2nd solution : jo cookies hai vhi expire krdo 
+
+// Redis k database m humko Blocked Token daal denge (key,value) pair m data store krta hai
+// key:token: ffvdsbsbf aise rkhenge kyuli jb future m hum is key ko dekhenge to pta chl pae ki ye token hai 
+// value:"blocked" (aise kuch bhi naam de skte hai)
 authRouter.post("/logout",async(req,res)=>{
 
-    try{                        // isse cookies expire ho jaengi..
+    try{      
+        const {token} =req.cookies; // isse hum cookies nikalenge
+
+        await redisClient.set(`token:${token}`, "Blocked");  // key, value ko set krdo
+        await redisClient.expire(`token:${token}`,1800);  // mtlb is key, value ko is time baad expire kr dena(isko hum yha hardcode nhi krenge)
+                  // isse cookies expire ho jaengi..
          res.send("token",null,{expires: new Date(Date.now())});
          res.send("Logged out Successfully");
     }

@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 async function main(){
 
   // mongodb se connect ho gye
-  await mongoose.connect(process.env.DB_CONECT_KEY);
+  await mongoose.connect(process.env.DB_CONNECT_KEY);
 
 }
 

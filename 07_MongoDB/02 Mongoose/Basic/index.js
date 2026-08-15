@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const main = require("./database");
 const User = require("./Models/users")
-require('dotenv').config();
+require('dotenv').config({ quiet: true })
 
 app.use(express.json());
 

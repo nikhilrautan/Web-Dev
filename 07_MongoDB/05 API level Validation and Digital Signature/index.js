@@ -4,7 +4,7 @@ const main = require("./database");
 const User = require("./Models/users");
 const validUser= require("./utils/validateuser");
 const bcrypt = require("bcrypt");
-require('dotenv').config();
+require('dotenv').config({ quiet: true })
 
 app.use(express.json());
 

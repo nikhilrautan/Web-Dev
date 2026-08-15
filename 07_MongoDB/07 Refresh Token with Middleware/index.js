@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const userAuth = require("./middlware/userAuth");
-require('dotenv').config();
+require('dotenv').config({ quiet: true })
 
 app.use(express.json());
 app.use(cookieParser());

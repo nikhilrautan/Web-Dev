@@ -7,7 +7,7 @@ const bcrypt = require("bcrypt");
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const userAuth = require("./middleware/userAuth");
-require('dotenv').config();
+require('dotenv').config({ quiet: true })
 const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const commentRouter = require("./routes/comment");
