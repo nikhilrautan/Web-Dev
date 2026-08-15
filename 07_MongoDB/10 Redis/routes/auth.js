@@ -84,8 +84,13 @@ authRouter.post("/logout",async(req,res)=>{
         console.log(payload);
 
         await redisClient.set(`token:${token}`, "Blocked");  // key, value ko set krdo
-        await redisClient.expire(`token:${token}`,1800);  // mtlb is key, value ko is time baad expire kr dena(isko hum yha hardcode nhi krenge)
-                  // isse cookies expire ho jaengi..
+        // await redisClient.expire(`token:${token}`,1800);  // mtlb is key, value ko is time baad expire kr dena( pr isko hum yha hardcode nhi krenge)
+        
+        // uske bajae hum ye use krte hai 'expireAt'
+        await redisClient.expireAt(`token:${token}`,payload.exp);
+
+
+                            // isse cookies expire ho jaengi..
          res.send("token",null,{expires: new Date(Date.now())});
          res.send("Logged out Successfully");
     }
