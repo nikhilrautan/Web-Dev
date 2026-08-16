@@ -1,3 +1,4 @@
+// Rate Limiter hume jo heavy DB calls hai unko faltu m call krne se bchata hai
 const jwt = require('jsonwebtoken');
 const User = require("../Models/users");
 const redisClient = require('../config/redis');
@@ -11,6 +12,10 @@ const rateLimiter = async (req,res,next){
         if(count >60)
         {
             throw new Error("User Limit Exceeded");
+        }
+        if(count==1)
+        {
+            redisClient.expire(3600);
         }
     }
     catch(err){
