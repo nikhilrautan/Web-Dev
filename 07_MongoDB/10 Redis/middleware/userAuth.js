@@ -36,7 +36,7 @@ const userAuth = async (req,res,next)=>{
                 {
                     throw new Error("Invalid Token");
                 }
-                
+                                
              // ab jo result aaya tha usko hum req.result m combine kr denge
             req.result = result;
             next();
