@@ -12,11 +12,10 @@ const authRouter = require("./routes/auth");
 const userRouter = require("./routes/user");
 const commentRouter = require("./routes/comment");
 const redisClient = require("./config/redis");
-
+const rateLimiter = require("./middleware/rateLimiter");
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(rateLimiter);
 
 app.use("/auth",authRouter); // jb bhi ye '/' dekhega wo seedha authRouter wale k pass chle jaega , ab usse pta unko kaise handle krna hai
  // 1: Registration , login wali humne ek saath daaldi (route create kr diya)
