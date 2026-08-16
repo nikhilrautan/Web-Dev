@@ -5,6 +5,8 @@ const rateLimiter = async (req,res,next)=>{
 
     try{
         const ip = req.ip;// isse hum client ka IP Address nikaal lenge
+        console.log(ip);
+
         const number_of_request = await redisClient.incr(ip); // key ko ek se increase kr dega (aur agr bna nhi hai phle se to bna dega auruski value 1 hogi)
         
         if(number_of_request >60)
@@ -15,6 +17,9 @@ const rateLimiter = async (req,res,next)=>{
         {
             redisClient.expire(3600);
         }
+
+        console.log(number_of_request);
+        
         next(); //koi bhi error/gltiyaan nhi hai to next wale m chle jao
     }
     catch(err){
