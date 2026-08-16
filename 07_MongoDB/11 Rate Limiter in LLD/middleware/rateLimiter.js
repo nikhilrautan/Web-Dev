@@ -17,6 +17,7 @@ const rateLimiter = async (req,res,next){
         {
             redisClient.expire(3600);
         }
+        next(); //koi bhi error/gltiyaan nhi hai to next wale m chle jao
     }
     catch(err){
         res.send("Error: "+err);
