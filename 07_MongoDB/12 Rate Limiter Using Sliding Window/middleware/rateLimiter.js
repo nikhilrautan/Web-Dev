@@ -20,7 +20,12 @@ const rateLimiter = async (req,res,next)=>{
        if(numberOfRequest>= MaxRequest){
         throw new Error("Number of Request Exceeded");
        }
+       // Request add ho jaegi 
        await redisClient.zAdd(key,[{score:current_time, value:`${current_time}:${Math.random()}`}]);
+    
+       // key TTL increase krna 
+       await redisClient.expire(key,windowSize);
+    
     }
     catch(err){
         res.send("Error: "+err);
