@@ -23,7 +23,7 @@ const rateLimiter = async (req,res,next)=>{
        // Request add ho jaegi 
        await redisClient.zAdd(key,[{score:current_time, value:`${current_time}:${Math.random()}`}]);
     
-       // key TTL increase krna 
+       // key TTL increase krna (jitni baar request aai hum expiry time ko badhate jaenge)
        await redisClient.expire(key,windowSize);
     
     }
