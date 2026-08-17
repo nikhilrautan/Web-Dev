@@ -1,26 +1,15 @@
 // Rate Limiter hume jo heavy DB calls hai unko faltu m call krne se bchata hai
 const redisClient = require('../config/redis');
+// Total Time: 60 min
+const windowSize = 3600;
+const MaxRequest =60;
 
 const rateLimiter = async (req,res,next)=>{
 
     try{
-        const ip = req.ip;// isse hum client ka IP Address nikaal lenge
-        console.log(ip);
-
-        const number_of_request = await redisClient.incr(ip); // key ko ek se increase kr dega (aur agr bna nhi hai phle se to bna dega auruski value 1 hogi)
-        
-        if(number_of_request >60)
-        {
-            throw new Error("User Limit Exceeded");
-        }
-        if(number_of_request==1)
-        {
-            redisClient.expire(3600);
-        }
-
-        console.log(number_of_request);
-        
-        next(); //koi bhi error/gltiyaan nhi hai to next wale m chle jao
+        const key = req.ip;
+       const current_time = Date.now()/1000;
+       const window_Time = current_time - windowSize; // kis time period se phle walo ko hatana hai
     }
     catch(err){
         res.send("Error: "+err);
