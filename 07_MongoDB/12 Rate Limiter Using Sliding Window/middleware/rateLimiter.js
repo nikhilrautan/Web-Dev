@@ -10,6 +10,9 @@ const rateLimiter = async (req,res,next)=>{
         const key = req.ip;
        const current_time = Date.now()/1000;
        const window_Time = current_time - windowSize; // kis time period se phle walo ko hatana hai
+           
+                                    // key , min_score, max_score
+       await redisClient.zRemRangeByScore(key,0,window_Time);
     }
     catch(err){
         res.send("Error: "+err);
