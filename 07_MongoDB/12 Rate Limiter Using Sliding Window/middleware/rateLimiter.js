@@ -7,7 +7,7 @@ const MaxRequest =60;
 const rateLimiter = async (req,res,next)=>{
 
     try{
-        const key = req.ip;
+        const key = `IP${req.ip}`;
        const current_time = Date.now()/1000; // time seconds m laane k liye 
        const window_Time = current_time - windowSize; // kis time period se phle walo ko hatana hai
            
