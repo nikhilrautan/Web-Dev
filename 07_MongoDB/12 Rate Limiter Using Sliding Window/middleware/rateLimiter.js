@@ -13,6 +13,14 @@ const rateLimiter = async (req,res,next)=>{
            
                                     // key , min_score, max_score
        await redisClient.zRemRangeByScore(key,0,window_Time);
+
+       // ab total no. of request kitni bchi hui hai
+       const numberOfRequest = await redisClient.zCard(key);
+       
+       if(numberOfRequest>= MaxRequest){
+        throw new Error("Number of Request Exceeded");
+       }
+       await redisClient.zAdd(key,[{score:current_time, value:`${current_time}:${Math.random()}`}]);
     }
     catch(err){
         res.send("Error: "+err);
