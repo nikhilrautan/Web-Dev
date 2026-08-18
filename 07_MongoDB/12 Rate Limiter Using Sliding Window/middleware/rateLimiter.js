@@ -16,7 +16,7 @@ const rateLimiter = async (req,res,next)=>{
 
        // ab total no. of request kitni bchi hui hai
        const numberOfRequest = await redisClient.zCard(key);
-                                                             
+
        if(numberOfRequest>= MaxRequest){
         throw new Error("Number of Request Exceeded");
        }
@@ -31,5 +31,6 @@ const rateLimiter = async (req,res,next)=>{
         res.send("Error: "+err);
     }
 }
+
 
 module.exports = rateLimiter;
