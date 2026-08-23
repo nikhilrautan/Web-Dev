@@ -1,5 +1,9 @@
 const { GoogleGenAI, ResponseFormat } = require ("@google/genai");
 require('dotenv').config();
+readlineSync = require('readline-sync');
+
+//Wait for user's response
+const useName = readlineSync.question('How can I help you-->');
 
 const ai = new GoogleGenAI({apiKey: process.env.GCP_API_KEY});
 
@@ -32,4 +36,16 @@ async function getWeather(location){
     }
   }
 }
-main();
+
+const question = readlineSync.question('Howe I can Help you-->');
+
+//  Delhi and Mumbai ka mausam bta 
+
+//  LLM ko bolunga : Delhi and Mumbai ka mausam bata , return m mujhe location wala array de dena 
+//  [{city:"delhi",date:'today},{city:"mumbai",date:'today}];
+
+//  Location getweather--> Actual Weather laake de dega
+
+//  Actual weather aaya hai, LLM ko dunga , iska weather report card ready kr de
+
+// User output mein show kra dunga 
