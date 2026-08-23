@@ -25,6 +25,11 @@ async function getWeather(location){
        const data = await response.json();    
        weatherInfo.push(data);
     }
+    else{
+        const response = await fetch(`http://api.weatherapi.com/v1/future.json?key=d6a3bcd7a43c4ed59c2155208252404&q=${city}`)
+        const data = await response.json();    
+        weatherInfo.push(data);
+    }
   }
 }
 main();
