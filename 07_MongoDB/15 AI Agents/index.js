@@ -16,6 +16,15 @@ async function main() {
 // Weather leke aaega
 
 async function getWeather(location){
-     
+
+    const weatherInfo= [];
+     for(const {city,date} of location){
+        if(date.toLowerCase()=='today')
+        {
+       const response = await fetch(`http://api.weatherapi.com/v1/future.json?key=d6a3bcd7a43c4ed59c2155208252404&q=${city}`)
+       const data = await response.json();    
+       weatherInfo.push(data);
+    }
+  }
 }
 main();
