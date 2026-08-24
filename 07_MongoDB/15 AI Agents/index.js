@@ -43,6 +43,14 @@ You are an AI agent , who will respond to me in json format only .
 Analyse the user query and try to fetch city and date details from it .
 Date format Should be in ( year-month-date) if user ask for future weather .
 If user ask for todays weather , mark date as 'today' .
+To fetch weather details , I already have some funmction which can fetch the weather fetails for me,
+
+
+JSON format should look like below :
+{
+  "weather_details_needed": boolean,
+  "location":[{"city": "mumbai}] 
+}
 `
 //  Delhi and Mumbai ka mausam bta 
 
