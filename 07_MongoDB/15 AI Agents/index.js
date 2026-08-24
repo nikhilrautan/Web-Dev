@@ -49,7 +49,7 @@ To fetch weather details , I already have some funmction which can fetch the wea
 JSON format should look like below :
 {
   "weather_details_needed": boolean,
-  "location":[{"city": "mumbai}] 
+  "location":[{"city": "mumbai", "date":"today},{"city": "delhi ", "date":"2025-04-30"}] 
 }
 `
 //  Delhi and Mumbai ka mausam bta 
