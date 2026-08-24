@@ -38,7 +38,12 @@ async function getWeather(location){
 }
 
 const question = readlineSync.question('Howe I can Help you-->');
-
+const prompt = `
+You are an AI agent , who will respond to me in json format only .
+Analyse the user query and try to fetch city and date details from it .
+Date format Should be in ( year-month-date) if user ask for future weather .
+If user ask for todays weather , mark date as 'today' .
+`
 //  Delhi and Mumbai ka mausam bta 
 
 //  LLM ko bolunga : Delhi and Mumbai ka mausam bata , return m mujhe location wala array de dena 
