@@ -6,11 +6,12 @@ readlineSync = require('readline-sync');
 const useName = readlineSync.question('How can I help you-->');
 
 const ai = new GoogleGenAI({apiKey: process.env.GCP_API_KEY});
+const ConversationHistory = [];
 
 async function main() {
   const interaction = await ai.interactions.create({
     model: "gemini-3.6-flash",
-    input: msg
+    input: ConversationHistory
   });
 
   return response.text;
@@ -45,12 +46,25 @@ Date format Should be in ( year-month-date) if user ask for future weather .
 If user ask for todays weather , mark date as 'today' .
 To fetch weather details , I already have some funmction which can fetch the weather fetails for me,
 
+if you need weather information use the below format
+JSON format should look like below :
+{
+  "weather_details_needed": true,
+  "location":[{"city": "mumbai", "date":"today},{"city": "delhi ", "date":"2025-04-30"}] 
+}
+
+Once you have the weather report details, respond me in JSON format only.
 
 JSON format should look like below :
 {
-  "weather_details_needed": boolean,
-  "location":[{"city": "mumbai", "date":"today},{"city": "delhi ", "date":"2025-04-30"}] 
+  "weather_details_needed": false,
+  "weather_report": "Bhai Delhi ka mausam to bdiya hai "
+
 }
+
+User asked this question: ${question}
+
+Strictly follow JSON format , respond only in JSON format
 `
 //  Delhi and Mumbai ka mausam bta 
 
