@@ -37,6 +37,7 @@ async function getWeather(location){
     }
   }
 }
+async function chatting() {
 
 const question = readlineSync.question('Howe I can Help you-->');
 const prompt = `
@@ -66,6 +67,12 @@ User asked this question: ${question}
 
 Strictly follow JSON format , respond only in JSON format
 `
+History.push({
+  role: "user",
+  parts: [{text: prompt}]
+})
+
+}
 //  Delhi and Mumbai ka mausam bta 
 
 //  LLM ko bolunga : Delhi and Mumbai ka mausam bata , return m mujhe location wala array de dena 
