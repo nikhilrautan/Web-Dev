@@ -14,7 +14,6 @@ async function askGemini() {
 }
 
 
-
 async function getWeather(locations) {
   const weatherInfo = [];
   for (const { city, date } of locations) {
