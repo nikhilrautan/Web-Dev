@@ -7,11 +7,12 @@ const conversationHistory = [];
 
 async function askGemini() {
   const result = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-3.6-flash",
     contents: conversationHistory,
   });
   return result.text;
 }
+
 
 async function getWeather(locations) {
   const weatherInfo = [];
