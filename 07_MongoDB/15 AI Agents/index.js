@@ -27,7 +27,6 @@ async function getWeather(locations) {
   return weatherInfo;
 }
 
-
 async function chatting() {
   const question = readlineSync.question('How can I help you--> ');
 
