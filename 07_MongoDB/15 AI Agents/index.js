@@ -75,5 +75,4 @@ Strictly respond in JSON format only.
   console.log(parsed.weather_report);
 }
 
-
 chatting();
